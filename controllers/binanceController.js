@@ -47,7 +47,9 @@ function getData(req, res){
             return res.status(500).json(err);
         }
 
-        var json = JSON.parse(bopdy);
+        var json = JSON.parse(body);
+        res.json(json);
+        console.log(body);
     })
 }
 
