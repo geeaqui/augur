@@ -31,7 +31,7 @@ class Router {
 
                 const router = express.Router();
                 //Generate the route
-                const baseRoute = '/' + dirs.join('/');
+                const baseRoute = '/api' + dirs.join('/');
                 console.log('Created route: ' + baseRoute + ' for ' + fullName);
 
                 //Load the JavaScript file ("controller") and pass the router to it
