@@ -1,13 +1,16 @@
 const express = require ('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    app = express(),
+    
     binanceRouter = require('./routes/binanceRoute'),
+    router = require('./routes/dynamicRouter'),
+    app = express(),
     port = process.env.PORT || 3000;
     
 class App {
     constructor(){
         this.initRoutes();
+        //this.initViewEngine();
         this.start();
     }
 
@@ -17,6 +20,7 @@ class App {
         });
     }
 
+    /*
     //might not be using this in the future
     initViewEngine() {
         const hbs = exphbs.create({
@@ -27,9 +31,22 @@ class App {
         app.set('view engine', 'hbs');
         hbsLayouts.register(hbs.handlebars, {});
     }
-
+*/
     initRoutes(){
-        app.use('/binance', binanceRouter);
+        //dynamic way of using routes
+        router.load(app, './controllers');
+
+        // redirect all others to the index (HTML5 history)
+        
+        /*
+        //currently not in use
+        app.all('/*', (req, res) => {
+            res.sendFile(__dirname + '/public/index.html');
+        });
+        */
+        
+
+        //app.use('/binance', binanceRouter); traditional of using router
     }
 }
 
@@ -41,12 +58,4 @@ app.listen(port, (err) => {
         console.log('[%s] Listening on http://localhost:%d', process.env.NODE_ENV, port);
 });
 */
-
-
-
-
 let myApp = new App();
-
-
-//TODO ammend vanila js to es5 format.
-//TODO understand the use of reposiroty directory on top of controller.

@@ -1,8 +1,14 @@
 const http = require('http'),
     request = require('request');
 
-    /*
+
 class BinanceController{
+    
+    constructor(router){
+        //console.log(router);
+        router.get('/data', this.getData.bind(this));
+    }
+
     
     getData(req, res){
         console.log(req.paramas);
@@ -21,15 +27,14 @@ class BinanceController{
                 return res.status(500).json(err);
             }
 
-            var json = JSON.parse(bopdy);
+            var json = JSON.parse(body);
+            res.json(json);
         })
     }
 }
-
-
-module.exports = new BinanceController();
-*/
-
+module.exports = BinanceController;
+//Traditional way of doing Controller
+/*
 function getData(req, res){
     console.log(req.paramas);
     let options = {
@@ -49,10 +54,11 @@ function getData(req, res){
 
         var json = JSON.parse(body);
         res.json(json);
-        console.log(body);
+        //console.log(body);
     })
 }
 
 module.exports = {
 	getData : getData
 }
+*/
