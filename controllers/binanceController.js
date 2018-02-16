@@ -1,34 +1,25 @@
+/*
 const http = require('http'),
     request = require('request');
-
+*/
+const binanceRepo = require('../lib/binanceRepository');
 
 class BinanceController{
     
     constructor(router){
         router.get('/data', this.getData.bind(this));
     }
-
     
     getData(req, res){
-        console.log(req.paramas);
-        let options = {
-            url : 'https://www.binance.com/api/v1/depth?symbol=BNBBTC&limit=1000',
-            method : 'GET',
-            headers: {
-                'Accept' : 'application/json',
-                'Accept-Charset' : 'utf-8'
-            }
-        }
-
-        request(options, function(err, response, body){
+        binanceRepo.getData((err, data) => {
             if(err){
                 console.log(err);
                 return res.status(500).json(err);
+            }else{
+                console.log('*** data is ok, ready to initialize!');
+                res.json(data.resp);
             }
-
-            var json = JSON.parse(body);
-            res.json(json);
-        })
+        });
     }
 }
 module.exports = BinanceController;
