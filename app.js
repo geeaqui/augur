@@ -1,14 +1,16 @@
-const express = require ('express'),
-    mongoose = require('mongoose'),
-    bodyParser = require('body-parser'),
-    router = require('./routes/dynamicRouter'),
-    app = express(),
-    port = process.env.PORT || 3000;
+const express       = require ('express'),
+    exphbs          = require('express-handlebars'),
+    hbsLayouts      = require('handlebars-layouts'),
+    mongoose        = require('mongoose'),
+    bodyParser      = require('body-parser'),
+    router          = require('./routes/dynamicRouter'),
+    app             = express(),
+    port            = process.env.PORT || 3000;
     
 class App {
     constructor(){
         this.initRoutes();
-        //this.initViewEngine();
+        this.initViewEngine();
         this.start();
     }
 
@@ -18,7 +20,7 @@ class App {
         });
     }
 
-    /*
+    
     //might not be using this in the future
     initViewEngine() {
         const hbs = exphbs.create({
@@ -29,19 +31,19 @@ class App {
         app.set('view engine', 'hbs');
         hbsLayouts.register(hbs.handlebars, {});
     }
-*/
+
     initRoutes(){
         //dynamic way of using routes
         router.load(app, './controllers');
 
         // redirect all others to the index (HTML5 history)
         
-        /*
+        
         //currently not in use
         app.all('/*', (req, res) => {
             res.sendFile(__dirname + '/public/index.html');
         });
-        */
+        
         
     }
 }
