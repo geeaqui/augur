@@ -21,7 +21,8 @@ import { EnsureModuleLoadedOnceGuard } from '../shared/ensureModuleLoadedOnceGua
     //   headerName: 'My-X-XSRF-TOKEN',
     // })
   ],
-  providers: [ DataService, DataFilterService, Sorter, TrackByService] 
+  //providers: [ DataService, DataFilterService, Sorter, TrackByService] 
+  providers: [ DataService] 
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    //Ensure that CoreModule is only loaded into AppModule
 

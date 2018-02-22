@@ -44,7 +44,8 @@ var CoreModule = /** @class */ (function (_super) {
                 //Can use with Angular 4.3+ to 
                 http_1.HttpClientModule,
             ],
-            providers: [data_service_1.DataService, DataFilterService, Sorter, TrackByService]
+            //providers: [ DataService, DataFilterService, Sorter, TrackByService] 
+            providers: [data_service_1.DataService]
         }),
         __param(0, core_1.Optional()), __param(0, core_1.SkipSelf()),
         __metadata("design:paramtypes", [CoreModule])
