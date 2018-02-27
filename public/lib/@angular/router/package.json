@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "@angular/router@",
+        "raw": "@angular/router@^5.0.0",
         "scope": "@angular",
         "escapedName": "@angular%2frouter",
         "name": "@angular/router",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^5.0.0",
+        "spec": ">=5.0.0 <6.0.0",
+        "type": "range"
       },
-      "C:\\Users\\geeKy\\desktop\\augur"
+      "C:\\Users\\geeKy\\desktop\\angular\\src"
     ]
   ],
-  "_from": "@angular/router@",
-  "_hasShrinkwrap": false,
-  "_id": "@angular/router@5.2.5",
+  "_from": "@angular/router@>=5.0.0 <6.0.0",
+  "_id": "@angular/router@5.2.2",
+  "_inCache": true,
   "_location": "/@angular/router",
   "_nodeVersion": "8.9.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/router_5.2.5_1518585894043_0.13271757343502655"
+    "tmp": "tmp/router-5.2.2.tgz_1516858516453_0.5374820344150066"
   },
   "_npmUser": {
     "name": "angular",
-    "email": "devops+npm@angular.io"
+    "email": "angular-core+npm@google.com"
   },
   "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/router@",
+    "raw": "@angular/router@^5.0.0",
     "scope": "@angular",
     "escapedName": "@angular%2frouter",
     "name": "@angular/router",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^5.0.0",
+    "spec": ">=5.0.0 <6.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/router/-/router-5.2.5.tgz",
-  "_shasum": "f8f220d5fb85fc10d60fe606b0f2a64732265142",
+  "_resolved": "https://registry.npmjs.org/@angular/router/-/router-5.2.2.tgz",
+  "_shasum": "b0ffd7121290e8c01f20862b4a2638ebcebc61cf",
   "_shrinkwrap": null,
-  "_spec": "@angular/router@",
-  "_where": "C:\\Users\\geeKy\\desktop\\augur",
+  "_spec": "@angular/router@^5.0.0",
+  "_where": "C:\\Users\\geeKy\\desktop\\angular\\src",
   "author": {
     "name": "angular"
   },
@@ -58,11 +58,9 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-I8U0iy59lz0dAxU4zxRQHagfUPWF+MikLNMirRL1lrA49PG+5K1tiuIQ6p+8fZFAJ5UXwNHyXqYuWqsKRiVBHQ==",
-    "shasum": "f8f220d5fb85fc10d60fe606b0f2a64732265142",
-    "tarball": "https://registry.npmjs.org/@angular/router/-/router-5.2.5.tgz",
-    "fileCount": 70,
-    "unpackedSize": 2813228
+    "integrity": "sha512-Yn71rFMMyIjwairBWGcUFbdiAVuTp7y5yEin8vJK3DAWgTyk0FYfhKHY3r9NofNH9M7Id53WafC02+3SseFBlA==",
+    "shasum": "b0ffd7121290e8c01f20862b4a2638ebcebc61cf",
+    "tarball": "https://registry.npmjs.org/@angular/router/-/router-5.2.2.tgz"
   },
   "es2015": "./esm2015/router.js",
   "homepage": "https://github.com/angular/angular/tree/master/packages/router",
@@ -75,16 +73,16 @@
   "maintainers": [
     {
       "name": "angular",
-      "email": "devops+npm@angular.io"
+      "email": "angular-core+npm@google.com"
     }
   ],
   "module": "./esm5/router.js",
   "name": "@angular/router",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "5.2.5",
-    "@angular/common": "5.2.5",
-    "@angular/platform-browser": "5.2.5",
+    "@angular/core": "5.2.2",
+    "@angular/common": "5.2.2",
+    "@angular/platform-browser": "5.2.2",
     "rxjs": "^5.5.0"
   },
   "readme": "Angular\n=======\n\nThe sources for this package are in the main [Angular](https://github.com/angular/angular) repo. Please file issues and pull requests against that repo.\n\nLicense: MIT\n",
@@ -94,5 +92,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "typings": "./router.d.ts",
-  "version": "5.2.5"
+  "version": "5.2.2"
 }

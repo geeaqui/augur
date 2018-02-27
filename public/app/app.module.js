@@ -24,7 +24,7 @@ var AppModule = /** @class */ (function () {
                 //SharedModule  //Shared (multi-instance) objects
             ],
             declarations: [app_component_1.AppComponent, app_routing_1.appRouting.components],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent] // This is used to tell Angular JS which components need to be loaded so that its functionality can be accessed in the application. Once you include the component in the bootstrap array, you need to declare them so that they can be used across other components in the Angular JS application.
         })
     ], AppModule);
     return AppModule;

@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "@angular/platform-browser-dynamic@",
+        "raw": "@angular/platform-browser-dynamic@^5.0.0",
         "scope": "@angular",
         "escapedName": "@angular%2fplatform-browser-dynamic",
         "name": "@angular/platform-browser-dynamic",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^5.0.0",
+        "spec": ">=5.0.0 <6.0.0",
+        "type": "range"
       },
-      "C:\\Users\\geeKy\\desktop\\augur"
+      "C:\\Users\\geeKy\\desktop\\angular\\src"
     ]
   ],
-  "_from": "@angular/platform-browser-dynamic@",
-  "_hasShrinkwrap": false,
-  "_id": "@angular/platform-browser-dynamic@5.2.5",
+  "_from": "@angular/platform-browser-dynamic@>=5.0.0 <6.0.0",
+  "_id": "@angular/platform-browser-dynamic@5.2.2",
+  "_inCache": true,
   "_location": "/@angular/platform-browser-dynamic",
   "_nodeVersion": "8.9.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/platform-browser-dynamic_5.2.5_1518585884570_0.4097442105674931"
+    "tmp": "tmp/platform-browser-dynamic-5.2.2.tgz_1516858509663_0.8059957730583847"
   },
   "_npmUser": {
     "name": "angular",
-    "email": "devops+npm@angular.io"
+    "email": "angular-core+npm@google.com"
   },
   "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/platform-browser-dynamic@",
+    "raw": "@angular/platform-browser-dynamic@^5.0.0",
     "scope": "@angular",
     "escapedName": "@angular%2fplatform-browser-dynamic",
     "name": "@angular/platform-browser-dynamic",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^5.0.0",
+    "spec": ">=5.0.0 <6.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.5.tgz",
-  "_shasum": "b89df410bd953e2a6843325f9ac3c09a10eadaf0",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.2.tgz",
+  "_shasum": "2ddd7fa28bb34ae9e181e6f286dfe4c96bde95a6",
   "_shrinkwrap": null,
-  "_spec": "@angular/platform-browser-dynamic@",
-  "_where": "C:\\Users\\geeKy\\desktop\\augur",
+  "_spec": "@angular/platform-browser-dynamic@^5.0.0",
+  "_where": "C:\\Users\\geeKy\\desktop\\angular\\src",
   "author": {
     "name": "angular"
   },
@@ -58,11 +58,9 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-IMEe2qUTC3CA3KoswmJJs+O2Lkyd5GXgl5ULupqhhm/TOL2FLk00kwv8k3Epaf2d1wXcjK3BMG7aAwc6RLH7QA==",
-    "shasum": "b89df410bd953e2a6843325f9ac3c09a10eadaf0",
-    "tarball": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.5.tgz",
-    "fileCount": 42,
-    "unpackedSize": 492678
+    "integrity": "sha512-PCg63japwHw6zGWGHZEpiDKeqPaCbOKnBl7bhRzE5imL+74toyvmE33sp7OzXKGi0mX5mUymfRsvfLdB6khGTQ==",
+    "shasum": "2ddd7fa28bb34ae9e181e6f286dfe4c96bde95a6",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-5.2.2.tgz"
   },
   "es2015": "./esm2015/platform-browser-dynamic.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -71,17 +69,17 @@
   "maintainers": [
     {
       "name": "angular",
-      "email": "devops+npm@angular.io"
+      "email": "angular-core+npm@google.com"
     }
   ],
   "module": "./esm5/platform-browser-dynamic.js",
   "name": "@angular/platform-browser-dynamic",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "5.2.5",
-    "@angular/common": "5.2.5",
-    "@angular/compiler": "5.2.5",
-    "@angular/platform-browser": "5.2.5"
+    "@angular/core": "5.2.2",
+    "@angular/common": "5.2.2",
+    "@angular/compiler": "5.2.2",
+    "@angular/platform-browser": "5.2.2"
   },
   "readme": "Angular\n=======\n\nThe sources for this package are in the main [Angular](https://github.com/angular/angular) repo. Please file issues and pull requests against that repo.\n\nLicense: MIT\n",
   "readmeFilename": "README.md",
@@ -90,5 +88,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "typings": "./platform-browser-dynamic.d.ts",
-  "version": "5.2.5"
+  "version": "5.2.2"
 }

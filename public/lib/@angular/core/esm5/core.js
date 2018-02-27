@@ -1,5 +1,5 @@
 /**
- * @license Angular v5.2.5
+ * @license Angular v5.2.2
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -8,7 +8,6 @@ import { Observable } from 'rxjs/Observable';
 import { merge } from 'rxjs/observable/merge';
 import { share } from 'rxjs/operator/share';
 import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
 
 /**
  * @fileoverview added by tsickle
@@ -717,7 +716,7 @@ var Version = /** @class */ (function () {
 /**
  * \@stable
  */
-var VERSION = new Version('5.2.5');
+var VERSION = new Version('5.2.2');
 
 /**
  * @fileoverview added by tsickle
@@ -831,7 +830,6 @@ var __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefi
     self instanceof WorkerGlobalScope && self;
 var __global = typeof global !== 'undefined' && global;
 var _global = __window || __global || __self;
-var promise = Promise.resolve(0);
 var _symbolIterator = null;
 /**
  * @return {?}
@@ -861,13 +859,7 @@ function getSymbolIterator() {
  * @return {?}
  */
 function scheduleMicroTask(fn) {
-    if (typeof Zone === 'undefined') {
-        // use promise to schedule microTask instead of use Zone
-        promise.then(function () { fn && fn.apply(null, null); });
-    }
-    else {
-        Zone.current.scheduleMicroTask('scheduleMicrotask', fn);
-    }
+    Zone.current.scheduleMicroTask('scheduleMicrotask', fn);
 }
 /**
  * @param {?} a
@@ -4346,11 +4338,7 @@ var EventEmitter = /** @class */ (function (_super) {
                     this.__isAsync ? function () { setTimeout(function () { return complete(); }); } : function () { complete(); };
             }
         }
-        var /** @type {?} */ sink = _super.prototype.subscribe.call(this, schedulerFn, errorFn, completeFn);
-        if (generatorOrNext instanceof Subscription) {
-            generatorOrNext.add(sink);
-        }
-        return sink;
+        return _super.prototype.subscribe.call(this, schedulerFn, errorFn, completeFn);
     };
     return EventEmitter;
 }(Subject));
@@ -6289,7 +6277,6 @@ var QueryList = /** @class */ (function () {
         this.dirty = true;
         this._results = [];
         this.changes = new EventEmitter();
-        this.length = 0;
     }
     /**
      * See
@@ -9912,7 +9899,7 @@ function checkAndUpdateBinding(view, def, bindingIdx, value) {
 function checkBindingNoChanges(view, def, bindingIdx, value) {
     var /** @type {?} */ oldValue = view.oldValues[def.bindingIndex + bindingIdx];
     if ((view.state & 1 /* BeforeFirstCheck */) || !devModeEqual(oldValue, value)) {
-        var /** @type {?} */ bindingName = def.bindings[bindingIdx].name;
+        var /** @type {?} */ bindingName = def.bindings[def.bindingIndex].name;
         throw expressionChangedAfterItHasBeenCheckedError(Services.createDebugContext(view, def.nodeIndex), bindingName + ": " + oldValue, bindingName + ": " + value, (view.state & 1 /* BeforeFirstCheck */) !== 0);
     }
 }
@@ -18258,7 +18245,7 @@ function invertObject(obj) {
  * The `\@childAnimation` trigger will not animate because `\@.disabled` prevents it from happening
  * (when true).
  *
- * Note that `\@.disabled` will only disable all animations (this means any animations running on
+ * Note that `\@.disbled` will only disable all animations (this means any animations running on
  * the same element will also be disabled).
  *
  * ### Disabling Animations Application-wide

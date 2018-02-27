@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "@angular/platform-browser@",
+        "raw": "@angular/platform-browser@^5.0.0",
         "scope": "@angular",
         "escapedName": "@angular%2fplatform-browser",
         "name": "@angular/platform-browser",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^5.0.0",
+        "spec": ">=5.0.0 <6.0.0",
+        "type": "range"
       },
-      "C:\\Users\\geeKy\\desktop\\augur"
+      "C:\\Users\\geeKy\\desktop\\angular\\src"
     ]
   ],
-  "_from": "@angular/platform-browser@",
-  "_hasShrinkwrap": false,
-  "_id": "@angular/platform-browser@5.2.5",
+  "_from": "@angular/platform-browser@>=5.0.0 <6.0.0",
+  "_id": "@angular/platform-browser@5.2.2",
+  "_inCache": true,
   "_location": "/@angular/platform-browser",
   "_nodeVersion": "8.9.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/platform-browser_5.2.5_1518585882676_0.9907989923003602"
+    "tmp": "tmp/platform-browser-5.2.2.tgz_1516858508045_0.6623332696035504"
   },
   "_npmUser": {
     "name": "angular",
-    "email": "devops+npm@angular.io"
+    "email": "angular-core+npm@google.com"
   },
   "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/platform-browser@",
+    "raw": "@angular/platform-browser@^5.0.0",
     "scope": "@angular",
     "escapedName": "@angular%2fplatform-browser",
     "name": "@angular/platform-browser",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^5.0.0",
+    "spec": ">=5.0.0 <6.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-5.2.5.tgz",
-  "_shasum": "eae4af2b742fb901d84d6367cd99f9e88102151f",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-5.2.2.tgz",
+  "_shasum": "3eedcbbcc8c0e6c91eba7ed2b32de7c6679d9b62",
   "_shrinkwrap": null,
-  "_spec": "@angular/platform-browser@",
-  "_where": "C:\\Users\\geeKy\\desktop\\augur",
+  "_spec": "@angular/platform-browser@^5.0.0",
+  "_where": "C:\\Users\\geeKy\\desktop\\angular\\src",
   "author": {
     "name": "angular"
   },
@@ -58,11 +58,9 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-iPAuoG/c3pD3hnk1g0VgJu/pzNITvLQyT0W71MDMSuxLxs291kq+U2jklm40pStISd1mPbCNKmvz/7M+WbdLhg==",
-    "shasum": "eae4af2b742fb901d84d6367cd99f9e88102151f",
-    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-5.2.5.tgz",
-    "fileCount": 83,
-    "unpackedSize": 2103105
+    "integrity": "sha512-jiiEEUiv4oOWtBP96hOnxHOY3ckukfSOaxtw+ENjSPAyv/eRbL1B2LFwIg+HYAFxvK8JOLAYZm3Hg9lpenlBMw==",
+    "shasum": "3eedcbbcc8c0e6c91eba7ed2b32de7c6679d9b62",
+    "tarball": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-5.2.2.tgz"
   },
   "es2015": "./esm2015/platform-browser.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -71,15 +69,15 @@
   "maintainers": [
     {
       "name": "angular",
-      "email": "devops+npm@angular.io"
+      "email": "angular-core+npm@google.com"
     }
   ],
   "module": "./esm5/platform-browser.js",
   "name": "@angular/platform-browser",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "5.2.5",
-    "@angular/common": "5.2.5"
+    "@angular/core": "5.2.2",
+    "@angular/common": "5.2.2"
   },
   "readme": "Angular\n=======\n\nThe sources for this package are in the main [Angular](https://github.com/angular/angular) repo. Please file issues and pull requests against that repo.\n\nLicense: MIT\n",
   "readmeFilename": "README.md",
@@ -88,5 +86,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "typings": "./platform-browser.d.ts",
-  "version": "5.2.5"
+  "version": "5.2.2"
 }

@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "@angular/core@",
+        "raw": "@angular/core@^5.0.0",
         "scope": "@angular",
         "escapedName": "@angular%2fcore",
         "name": "@angular/core",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^5.0.0",
+        "spec": ">=5.0.0 <6.0.0",
+        "type": "range"
       },
-      "C:\\Users\\geeKy\\desktop\\augur"
+      "C:\\Users\\geeKy\\desktop\\angular\\src"
     ]
   ],
-  "_from": "@angular/core@",
-  "_hasShrinkwrap": false,
-  "_id": "@angular/core@5.2.5",
+  "_from": "@angular/core@>=5.0.0 <6.0.0",
+  "_id": "@angular/core@5.2.2",
+  "_inCache": true,
   "_location": "/@angular/core",
   "_nodeVersion": "8.9.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/core_5.2.5_1518585870802_0.6592063239470007"
+    "tmp": "tmp/core-5.2.2.tgz_1516858497508_0.39177659852430224"
   },
   "_npmUser": {
     "name": "angular",
-    "email": "devops+npm@angular.io"
+    "email": "angular-core+npm@google.com"
   },
   "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/core@",
+    "raw": "@angular/core@^5.0.0",
     "scope": "@angular",
     "escapedName": "@angular%2fcore",
     "name": "@angular/core",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^5.0.0",
+    "spec": ">=5.0.0 <6.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/core/-/core-5.2.5.tgz",
-  "_shasum": "24f9cd75c5b2728f2ddd1869777590ea7177bca9",
+  "_resolved": "https://registry.npmjs.org/@angular/core/-/core-5.2.2.tgz",
+  "_shasum": "54950023b971d9e01f6f6fdbc30d2b68e4d05eb2",
   "_shrinkwrap": null,
-  "_spec": "@angular/core@",
-  "_where": "C:\\Users\\geeKy\\desktop\\augur",
+  "_spec": "@angular/core@^5.0.0",
+  "_where": "C:\\Users\\geeKy\\desktop\\angular\\src",
   "author": {
     "name": "angular"
   },
@@ -58,11 +58,9 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-Uo7R3LrsvA24JkRbwXWUZWp7NSEpwdTUxT1NScyjrBK+t8ybSL5/42Jo21md5M4pjeCsIgUXlGoCm1QtT5aYnQ==",
-    "shasum": "24f9cd75c5b2728f2ddd1869777590ea7177bca9",
-    "tarball": "https://registry.npmjs.org/@angular/core/-/core-5.2.5.tgz",
-    "fileCount": 144,
-    "unpackedSize": 7222099
+    "integrity": "sha512-SycTFvlJUHzYvqRYM0DQQUewSo0IPL3Vfo9MOwSJvhS5mXCP1+QW0IIhI8CyWy+40L3dIWlYnn0754z5IJikdg==",
+    "shasum": "54950023b971d9e01f6f6fdbc30d2b68e4d05eb2",
+    "tarball": "https://registry.npmjs.org/@angular/core/-/core-5.2.2.tgz"
   },
   "es2015": "./esm2015/core.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -71,7 +69,7 @@
   "maintainers": [
     {
       "name": "angular",
-      "email": "devops+npm@angular.io"
+      "email": "angular-core+npm@google.com"
     }
   ],
   "module": "./esm5/core.js",
@@ -88,5 +86,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "typings": "./core.d.ts",
-  "version": "5.2.5"
+  "version": "5.2.2"
 }

@@ -15,7 +15,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class DataService {
   
-    baseUrl: string = '/api/binance';
+    baseUrl: string = '/data';
 
     constructor(private http: HttpClient) { 
 
@@ -25,8 +25,9 @@ export class DataService {
      * First method to get data from node
     */
     getData(){
+        console.log('getting the data on the back-end');
         return this.http.get(this.baseUrl)
-            .map((response) => {
+            .map((response : Response) => {
                 return response;
             })
             .catch(this.handleError);

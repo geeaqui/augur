@@ -2,49 +2,49 @@
   "_args": [
     [
       {
-        "raw": "@angular/animations@",
+        "raw": "@angular/animations@^5.0.0",
         "scope": "@angular",
         "escapedName": "@angular%2fanimations",
         "name": "@angular/animations",
-        "rawSpec": "",
-        "spec": "latest",
-        "type": "tag"
+        "rawSpec": "^5.0.0",
+        "spec": ">=5.0.0 <6.0.0",
+        "type": "range"
       },
-      "C:\\Users\\geeKy\\desktop\\augur"
+      "C:\\Users\\geeKy\\desktop\\angular\\src"
     ]
   ],
-  "_from": "@angular/animations@",
-  "_hasShrinkwrap": false,
-  "_id": "@angular/animations@5.2.5",
+  "_from": "@angular/animations@>=5.0.0 <6.0.0",
+  "_id": "@angular/animations@5.2.2",
+  "_inCache": true,
   "_location": "/@angular/animations",
   "_nodeVersion": "8.9.2",
   "_npmOperationalInternal": {
     "host": "s3://npm-registry-packages",
-    "tmp": "tmp/animations_5.2.5_1518585851719_0.7007574107041865"
+    "tmp": "tmp/animations-5.2.2.tgz_1516858480945_0.6036211133468896"
   },
   "_npmUser": {
     "name": "angular",
-    "email": "devops+npm@angular.io"
+    "email": "angular-core+npm@google.com"
   },
   "_npmVersion": "5.5.1",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "@angular/animations@",
+    "raw": "@angular/animations@^5.0.0",
     "scope": "@angular",
     "escapedName": "@angular%2fanimations",
     "name": "@angular/animations",
-    "rawSpec": "",
-    "spec": "latest",
-    "type": "tag"
+    "rawSpec": "^5.0.0",
+    "spec": ">=5.0.0 <6.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/animations/-/animations-5.2.5.tgz",
-  "_shasum": "3e72184321c4979305619c74902b8be92d76db70",
+  "_resolved": "https://registry.npmjs.org/@angular/animations/-/animations-5.2.2.tgz",
+  "_shasum": "3364a0c4f355d3313dda9bde526e376c137fa169",
   "_shrinkwrap": null,
-  "_spec": "@angular/animations@",
-  "_where": "C:\\Users\\geeKy\\desktop\\augur",
+  "_spec": "@angular/animations@^5.0.0",
+  "_where": "C:\\Users\\geeKy\\desktop\\angular\\src",
   "author": {
     "name": "angular"
   },
@@ -58,11 +58,9 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "integrity": "sha512-70ElCmaeDxLQc2OkgYhJjXj4zjtdjI4K1D5ZZm/uSPLlUcqC6uf6skCXlhMawQoPbsL/SXE5xw2HlMgEbhUysw==",
-    "shasum": "3e72184321c4979305619c74902b8be92d76db70",
-    "tarball": "https://registry.npmjs.org/@angular/animations/-/animations-5.2.5.tgz",
-    "fileCount": 76,
-    "unpackedSize": 2934962
+    "integrity": "sha512-VlnsvvTub7MJqKcyllNHyp6LywUOR8z0uQgTxSXDYcQR39onTRTh9/I7qjRGOZTjNucUojRadyYRMInoPYPgZw==",
+    "shasum": "3364a0c4f355d3313dda9bde526e376c137fa169",
+    "tarball": "https://registry.npmjs.org/@angular/animations/-/animations-5.2.2.tgz"
   },
   "es2015": "./esm2015/animations.js",
   "homepage": "https://github.com/angular/angular#readme",
@@ -71,14 +69,14 @@
   "maintainers": [
     {
       "name": "angular",
-      "email": "devops+npm@angular.io"
+      "email": "angular-core+npm@google.com"
     }
   ],
   "module": "./esm5/animations.js",
   "name": "@angular/animations",
   "optionalDependencies": {},
   "peerDependencies": {
-    "@angular/core": "5.2.5"
+    "@angular/core": "5.2.2"
   },
   "readme": "Angular\n=======\n\nThe sources for this package are in the main [Angular](https://github.com/angular/angular) repo. Please file issues and pull requests against that repo.\n\nLicense: MIT\n",
   "readmeFilename": "README.md",
@@ -87,5 +85,5 @@
     "url": "git+https://github.com/angular/angular.git"
   },
   "typings": "./animations.d.ts",
-  "version": "5.2.5"
+  "version": "5.2.2"
 }

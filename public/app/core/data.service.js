@@ -22,12 +22,13 @@ require("rxjs/add/operator/catch");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.baseUrl = '/api/binance';
+        this.baseUrl = '/data';
     }
     /**
      * First method to get data from node
     */
     DataService.prototype.getData = function () {
+        console.log('getting the data on the back-end');
         return this.http.get(this.baseUrl)
             .map(function (response) {
             return response;
