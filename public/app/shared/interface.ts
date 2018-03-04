@@ -5,3 +5,9 @@ export interface IRouting {
     components: any[]
 }
 
+export interface IData{
+    bids: any[],
+    asks: any[],
+    updateId : number
+}
+

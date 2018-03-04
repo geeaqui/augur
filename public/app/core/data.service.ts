@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
+import {IData} from '../shared/interface'
 
 //import { ICustomer, IOrder, IState, IPagedResults, ICustomerResponse } from '../shared/interfaces';
 
@@ -16,21 +17,61 @@ import 'rxjs/add/operator/catch';
 export class DataService {
   
     baseUrl: string = '/data';
+    anyDatas : any;
+    bids : any[];
+    binanceData : IData;
 
     constructor(private http: HttpClient) { 
 
     }
 
+    
     /** 
      * First method to get data from node
     */
-    getData(){
+   /*
+    getData() : Observable<any[]>{
         console.log('getting the data on the back-end');
         return this.http.get(this.baseUrl)
             .map((response : Response) => {
-                return response;
+                console.log("find me");
+                //console.log(JSON.parse(JSON.stringify(response)));
+                this.anyDatas = JSON.parse(JSON.stringify(response));
+                console.log(this.anyDatas);
+                console.log("getting bids!!");
+
+                //Assigning bids to the variable;
+                this.bids = this.getBids(response)
+                //console.log(JSON.stringify(response));
+                //this.anyDatas.push(response);
+                return JSON.stringify(response);
             })
             .catch(this.handleError);
+    }
+    */
+
+   getData() : Observable<IData>{
+    console.log('getting the data on the back-end');
+    return this.http.get(this.baseUrl)
+        .map((response : Response) => {
+            console.log("find me");
+            //console.log(JSON.parse(JSON.stringify(response)));
+            this.anyDatas = JSON.parse(JSON.stringify(response));
+            console.log(this.anyDatas);
+
+            return this.anyDatas;
+        })
+        .catch(this.handleError);
+    }
+   
+    getBids(response : Response) : any{
+            let res = JSON.parse(JSON.stringify(response));
+            return res.bids;
+    } 
+
+    getAsk(response : Response) : any{
+        let res = JSON.parse(JSON.stringify(response));
+        return res.asks;
     }
 
     private handleError(error: HttpErrorResponse) {

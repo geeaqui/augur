@@ -27,13 +27,46 @@ var DataService = /** @class */ (function () {
     /**
      * First method to get data from node
     */
+    /*
+     getData() : Observable<any[]>{
+         console.log('getting the data on the back-end');
+         return this.http.get(this.baseUrl)
+             .map((response : Response) => {
+                 console.log("find me");
+                 //console.log(JSON.parse(JSON.stringify(response)));
+                 this.anyDatas = JSON.parse(JSON.stringify(response));
+                 console.log(this.anyDatas);
+                 console.log("getting bids!!");
+ 
+                 //Assigning bids to the variable;
+                 this.bids = this.getBids(response)
+                 //console.log(JSON.stringify(response));
+                 //this.anyDatas.push(response);
+                 return JSON.stringify(response);
+             })
+             .catch(this.handleError);
+     }
+     */
     DataService.prototype.getData = function () {
+        var _this = this;
         console.log('getting the data on the back-end');
         return this.http.get(this.baseUrl)
             .map(function (response) {
-            return response;
+            console.log("find me");
+            //console.log(JSON.parse(JSON.stringify(response)));
+            _this.anyDatas = JSON.parse(JSON.stringify(response));
+            console.log(_this.anyDatas);
+            return _this.anyDatas;
         })
             .catch(this.handleError);
+    };
+    DataService.prototype.getBids = function (response) {
+        var res = JSON.parse(JSON.stringify(response));
+        return res.bids;
+    };
+    DataService.prototype.getAsk = function (response) {
+        var res = JSON.parse(JSON.stringify(response));
+        return res.asks;
     };
     DataService.prototype.handleError = function (error) {
         console.error('server error:', error);
