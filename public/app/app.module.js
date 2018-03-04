@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
-var app_routing_1 = require("./app.routing");
+//import { appRouting } from './app.routing';
 var core_module_1 = require("./core/core.module");
 //import { SharedModule }   from './shared/shared.module';
 var AppModule = /** @class */ (function () {
@@ -19,11 +19,11 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                app_routing_1.appRouting.routes,
+                // appRouting.routes, 
                 core_module_1.CoreModule //Singleton objects
                 //SharedModule  //Shared (multi-instance) objects
             ],
-            declarations: [app_component_1.AppComponent, app_routing_1.appRouting.components],
+            declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent] // This is used to tell Angular JS which components need to be loaded so that its functionality can be accessed in the application. Once you include the component in the bootstrap array, you need to declare them so that they can be used across other components in the Angular JS application.
         })
     ], AppModule);

@@ -9,8 +9,9 @@ const express       = require ('express'),
     
 class App {
     constructor(){
-        this.initRoutes();
+        this.initExpressMiddleWare();
         this.initViewEngine();
+        this.initRoutes();
         this.start();
     }
 
@@ -20,6 +21,11 @@ class App {
         });
     }
 
+    initExpressMiddleWare() {
+        app.use(express.static(__dirname + '/public'));
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json());
+    }
     
     //might not be using this in the future
     initViewEngine() {
@@ -37,9 +43,7 @@ class App {
         router.load(app, './controllers');
 
         // redirect all others to the index (HTML5 history)
-        
-        
-        //currently not in use
+
         app.all('/*', (req, res) => {
             res.sendFile(__dirname + '/public/index.html');
         });

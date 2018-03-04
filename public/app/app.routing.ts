@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'binance', component: BinanceComponent},
   //{ path: 'customers/:id', component: CustomerEditComponent},
   //{ path: 'customers/:id', component: CustomerEditReactiveComponent },
-  { path: '**', pathMatch:'full', redirectTo: '/binance' } //catch any unfound routes and redirect to home page
+  //{ path: '**', pathMatch:'full', redirectTo: '/binance' } //catch any unfound routes and redirect to home page
 ];
 
 export const appRouting: IRouting = { 
