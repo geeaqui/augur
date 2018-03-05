@@ -1,0 +1,25 @@
+<div>{{appTitle}} Tutorial points</div>
+
+<div id="askBid">
+    <div>
+        <h1>BUY</h1>
+        <div *ngFor = 'let bids of iData.bids' id="bids">
+            <ul>
+                <li>AMOUNT: {{bids[0]}}</li>
+                <li>COIN SOLD: {{bids[1]}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div>
+        <h1>SELL</h1>
+        <div *ngFor = 'let asks of iData.asks' id="asks">
+            
+            <ul>
+                <li>AMOUNT: {{asks[0]}}</li>
+                <li>COIN SOLD: {{asks[1]}}</li>
+            </ul>
+        </div>
+    </div>    
+</div>
+<div>

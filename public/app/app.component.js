@@ -14,11 +14,12 @@ var data_service_1 = require("./core/data.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent(_data) {
         this._data = _data;
+        this.appTitle = "Binance First Data Output";
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._data.getData()
-            .subscribe(function (data) { return _this.iData = data.asks; });
+            .subscribe(function (data) { return _this.iData = data; });
         //this.bids = this._data.bids;
         //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
         //currently used interface to to define eash data but its not working;
@@ -26,7 +27,11 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-tag',
-            template: " <div>\n  <div>{{iData}}</div>\n  <div>To Tutorials Point</div>\n</div> ",
+            //template: ` <div>
+            //<div>{{iData}}</div>
+            //<div>To Tutorials Point</div>
+            //</div> `,
+            templateUrl: './app.component.html',
             providers: [data_service_1.DataService]
             //TODO check what does provider does
         }),
