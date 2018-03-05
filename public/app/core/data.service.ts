@@ -56,20 +56,28 @@ export class DataService {
         .map((response : Response) => {
             console.log("find me");
             //console.log(JSON.parse(JSON.stringify(response)));
+            this.binanceData = {
+                bids: this.getBids(response),
+                asks:this.getAsk(response),
+                updateId: 1234
+            }
+            console.log("Binace Data log");
+            console.log(this.binanceData);
             this.anyDatas = JSON.parse(JSON.stringify(response));
             console.log(this.anyDatas);
 
-            return this.anyDatas;
+            //return this.anyDatas;
+            return this.binanceData;
         })
         .catch(this.handleError);
     }
    
-    getBids(response : Response) : any{
+    getBids(response : Response) : any[]{
             let res = JSON.parse(JSON.stringify(response));
             return res.bids;
     } 
 
-    getAsk(response : Response) : any{
+    getAsk(response : Response) : any[]{
         let res = JSON.parse(JSON.stringify(response));
         return res.asks;
     }

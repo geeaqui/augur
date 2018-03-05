@@ -54,9 +54,17 @@ var DataService = /** @class */ (function () {
             .map(function (response) {
             console.log("find me");
             //console.log(JSON.parse(JSON.stringify(response)));
+            _this.binanceData = {
+                bids: _this.getBids(response),
+                asks: _this.getAsk(response),
+                updateId: 1234
+            };
+            console.log("Binace Data log");
+            console.log(_this.binanceData);
             _this.anyDatas = JSON.parse(JSON.stringify(response));
             console.log(_this.anyDatas);
-            return _this.anyDatas;
+            //return this.anyDatas;
+            return _this.binanceData;
         })
             .catch(this.handleError);
     };

@@ -18,14 +18,17 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._data.getData()
-            .subscribe(function (data) { return _this.iData = data; });
+            .subscribe(function (data) { return _this.iData = data.asks; });
         //this.bids = this._data.bids;
+        //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
+        //currently used interface to to define eash data but its not working;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-tag',
-            template: " <div>\n  \n  <div>To Tutorials Point</div>\n</div> ",
-            providers: [data_service_1.DataService,]
+            template: " <div>\n  <div>{{iData}}</div>\n  <div>To Tutorials Point</div>\n</div> ",
+            providers: [data_service_1.DataService]
+            //TODO check what does provider does
         }),
         __metadata("design:paramtypes", [data_service_1.DataService])
     ], AppComponent);
