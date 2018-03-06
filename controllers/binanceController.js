@@ -11,13 +11,14 @@ class BinanceController{
     }
     
     getData(req, res){
-        binanceRepo.getData((err, data) => {
+        binanceRepo.getData("SUB", "BTC", (err, data) => {
             if(err){
                 console.log(err);
                 return res.status(500).json(err);
             }else{
                 console.log('*** data is ok, ready to initialize!');
                 res.json(data.resp);
+                data.buy
             }
         });
     }
