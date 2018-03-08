@@ -11,3 +11,10 @@ export interface IData{
     updateId : number
 }
 
+export class Product { 
+    constructor ( 
+       public bids: any[], 
+       public ask: any[] 
+    ) {  } 
+ }
+
