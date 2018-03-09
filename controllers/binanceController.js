@@ -7,11 +7,12 @@ const binanceRepo = require('../lib/binanceRepository');
 class BinanceController{
     
     constructor(router){
-        router.get('/data', this.getData.bind(this));
+        router.get('/data/:coin', this.getData.bind(this));
     }
     
     getData(req, res){
-        binanceRepo.getData((err, data) => {
+        req.params.coin ='BCPT';
+        binanceRepo.getData(req, (err, data) => {
             if(err){
                 console.log(err);
                 return res.status(500).json(err);
