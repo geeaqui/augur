@@ -11,7 +11,10 @@ class BinanceController{
     }
     
     getData(req, res){
-        req.params.coin ='BCPT';
+
+        //query param value
+        req.params.coin ='SUB';
+
         binanceRepo.getData(req, (err, data) => {
             if(err){
                 console.log(err);
@@ -24,4 +27,3 @@ class BinanceController{
     }
 }
 module.exports = BinanceController;
-

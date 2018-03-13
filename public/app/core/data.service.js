@@ -22,31 +22,8 @@ require("rxjs/add/operator/catch");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.baseUrl = '/data';
+        this.baseUrl = '/data/:coin';
     }
-    /**
-     * First method to get data from node
-    */
-    /*
-     getData() : Observable<any[]>{
-         console.log('getting the data on the back-end');
-         return this.http.get(this.baseUrl)
-             .map((response : Response) => {
-                 console.log("find me");
-                 //console.log(JSON.parse(JSON.stringify(response)));
-                 this.anyDatas = JSON.parse(JSON.stringify(response));
-                 console.log(this.anyDatas);
-                 console.log("getting bids!!");
- 
-                 //Assigning bids to the variable;
-                 this.bids = this.getBids(response)
-                 //console.log(JSON.stringify(response));
-                 //this.anyDatas.push(response);
-                 return JSON.stringify(response);
-             })
-             .catch(this.handleError);
-     }
-     */
     DataService.prototype.getData = function () {
         var _this = this;
         console.log('getting the data on the back-end');
@@ -93,4 +70,28 @@ var DataService = /** @class */ (function () {
     return DataService;
 }());
 exports.DataService = DataService;
+Todo;
+add;
+the;
+parametters in data.service;
+TODO;
+consume;
+the;
+query;
+params in the;
+component;
+which;
+inputs;
+will;
+be;
+getting;
+from;
+the;
+front - end;
+Read;
+the;
+angular;
+http;
+documentation;
+https: ; //www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
 //# sourceMappingURL=data.service.js.map

@@ -16,7 +16,7 @@ import {IData} from '../shared/interface'
 @Injectable()
 export class DataService {
   
-    baseUrl: string = '/data';
+    baseUrl: string = '/data/:coin';
     anyDatas : any;
     bids : any[];
     binanceData : IData;
@@ -24,31 +24,6 @@ export class DataService {
     constructor(private http: HttpClient) { 
 
     }
-
-    
-    /** 
-     * First method to get data from node
-    */
-   /*
-    getData() : Observable<any[]>{
-        console.log('getting the data on the back-end');
-        return this.http.get(this.baseUrl)
-            .map((response : Response) => {
-                console.log("find me");
-                //console.log(JSON.parse(JSON.stringify(response)));
-                this.anyDatas = JSON.parse(JSON.stringify(response));
-                console.log(this.anyDatas);
-                console.log("getting bids!!");
-
-                //Assigning bids to the variable;
-                this.bids = this.getBids(response)
-                //console.log(JSON.stringify(response));
-                //this.anyDatas.push(response);
-                return JSON.stringify(response);
-            })
-            .catch(this.handleError);
-    }
-    */
 
    getData() : Observable<IData>{
     console.log('getting the data on the back-end');
@@ -93,4 +68,9 @@ export class DataService {
         return Observable.throw(error || 'Node.js server error');
     }
 
-}
+}   
+
+
+    Todo add the parametters in data.service
+    TODO consume the query params in the component which inputs will be getting from the front-end
+    Read the angular http documentation https://www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
