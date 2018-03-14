@@ -22,14 +22,21 @@ require("rxjs/add/operator/catch");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.baseUrl = '/data/:coin';
+        this.baseUrl = '/data/';
     }
+    DataService.prototype.setHeaderAndQueryParam = function (param) {
+    };
     DataService.prototype.getData = function () {
         var _this = this;
         console.log('getting the data on the back-end');
-        return this.http.get(this.baseUrl)
+        return this.http.get(this.baseUrl, {
+            params: {
+                coin: 'LTC'
+            }
+        })
             .map(function (response) {
             console.log("find me");
+            console.log(_this.baseUrl);
             //console.log(JSON.parse(JSON.stringify(response)));
             _this.binanceData = {
                 bids: _this.getBids(response),
@@ -70,28 +77,6 @@ var DataService = /** @class */ (function () {
     return DataService;
 }());
 exports.DataService = DataService;
-Todo;
-add;
-the;
-parametters in data.service;
-TODO;
-consume;
-the;
-query;
-params in the;
-component;
-which;
-inputs;
-will;
-be;
-getting;
-from;
-the;
-front - end;
-Read;
-the;
-angular;
-http;
-documentation;
-https: ; //www.concretepage.com/angular-2/angular-2-http-get-parameters-headers-urlsearchparams-requestoptions-example
+//Todo add the parametters in data.service
+//TODO consume the query params in the component which inputs will be getting from the front-end
 //# sourceMappingURL=data.service.js.map

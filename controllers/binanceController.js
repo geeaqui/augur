@@ -13,7 +13,9 @@ class BinanceController{
     getData(req, res){
 
         //query param value
-        req.params.coin ='SUB';
+        //req.params.coin ='SUB';
+        console.log("tralalalalala");
+        console.log("eto ang coin "+ req.params.coin);
 
         binanceRepo.getData(req, (err, data) => {
             if(err){
