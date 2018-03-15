@@ -22,18 +22,15 @@ require("rxjs/add/operator/catch");
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
-        this.baseUrl = '/data/';
+        this.queryParam = null;
     }
-    DataService.prototype.setHeaderAndQueryParam = function (param) {
-    };
-    DataService.prototype.getData = function () {
+    DataService.prototype.getData = function (coin) {
         var _this = this;
+        this.queryParam = coin;
+        this.baseUrl = '/data/' + this.queryParam;
         console.log('getting the data on the back-end');
-        return this.http.get(this.baseUrl, {
-            params: {
-                coin: 'LTC'
-            }
-        })
+        console.log(this.baseUrl);
+        return this.http.get(this.baseUrl)
             .map(function (response) {
             console.log("find me");
             console.log(_this.baseUrl);
@@ -47,7 +44,6 @@ var DataService = /** @class */ (function () {
             console.log(_this.binanceData);
             _this.anyDatas = JSON.parse(JSON.stringify(response));
             console.log(_this.anyDatas);
-            //return this.anyDatas;
             return _this.binanceData;
         })
             .catch(this.handleError);
@@ -77,6 +73,4 @@ var DataService = /** @class */ (function () {
     return DataService;
 }());
 exports.DataService = DataService;
-//Todo add the parametters in data.service
-//TODO consume the query params in the component which inputs will be getting from the front-end
 //# sourceMappingURL=data.service.js.map

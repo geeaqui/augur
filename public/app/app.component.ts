@@ -16,12 +16,13 @@ import { Observer } from 'rxjs/Observer';
 export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;
+  coin : string = 'omg';
   
   constructor(private _data : DataService){
   }
 
   ngOnInit() : void{
-    this._data.getData()
+    this._data.getData(this.coin)
       .subscribe(data => this.iData = data);
       //this.bids = this._data.bids;
       

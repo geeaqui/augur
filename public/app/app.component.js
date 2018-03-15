@@ -15,10 +15,11 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(_data) {
         this._data = _data;
         this.appTitle = "Binance First Data Output";
+        this.coin = 'omg';
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this._data.getData()
+        this._data.getData(this.coin)
             .subscribe(function (data) { return _this.iData = data; });
         //this.bids = this._data.bids;
         //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;

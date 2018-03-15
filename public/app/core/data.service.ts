@@ -15,8 +15,8 @@ import {IData} from '../shared/interface'
 
 @Injectable()
 export class DataService {
-  
-    baseUrl: string = '/data/';
+    queryParam :string  = null;
+    baseUrl: string ;
     anyDatas : any;
     bids : any[];
     binanceData : IData;
@@ -25,17 +25,14 @@ export class DataService {
 
     }
 
-    setHeaderAndQueryParam(param : string) : void {
-        
-    }
+   getData(coin :string) : Observable<IData>{
 
-   getData() : Observable<IData>{
+    this.queryParam = coin;
+    this.baseUrl= '/data/' + this.queryParam;
+
     console.log('getting the data on the back-end');
-    return this.http.get(this.baseUrl, {
-        params:{
-            coin : 'LTC'
-        }
-    })
+    console.log(this.baseUrl);
+    return this.http.get(this.baseUrl, )
         .map((response : Response) => {
             console.log("find me");
             console.log(this.baseUrl);
@@ -50,7 +47,6 @@ export class DataService {
             this.anyDatas = JSON.parse(JSON.stringify(response));
             console.log(this.anyDatas);
 
-            //return this.anyDatas;
             return this.binanceData;
         })
         .catch(this.handleError);
@@ -79,7 +75,3 @@ export class DataService {
 
 }   
 
-
-    //Todo add the parametters in data.service
-    //TODO consume the query params in the component which inputs will be getting from the front-end
-    
