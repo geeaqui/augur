@@ -16,13 +16,13 @@ import { Observer } from 'rxjs/Observer';
 export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;
-  coin : string = 'omg';
+  coin : string;
   
   constructor(private _data : DataService){
   }
 
   setCoin(coin:string):void{
-    this.coin = coin;
+    this.coin = coin.toUpperCase();
     console.log(this.appTitle);
 
     this.getCoinData();

@@ -4,10 +4,10 @@
 <button (click)="setCoin('trx')">TRX/BTC</button>
 <button (click)="setCoin('bcpt')">BCPT/BTC</button>
 
-{{coin }}
 <div id="askBid" >
     <div>
-        <h1>BUY</h1>
+        <h1>{{coin}}</h1>
+        <h5>BUY</h5>
         <div *ngFor = 'let bids of iData.bids' id="bids">
             <ul>
                 <li>AMOUNT: {{bids[0]}}</li>
@@ -17,7 +17,7 @@
     </div>
 
     <div>
-        <h1>SELL</h1>
+        <h5>SELL</h5>
         <div *ngFor = 'let asks of iData.asks' id="asks">
             
             <ul>
