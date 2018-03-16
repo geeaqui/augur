@@ -17,13 +17,25 @@ var AppComponent = /** @class */ (function () {
         this.appTitle = "Binance First Data Output";
         this.coin = 'omg';
     }
-    AppComponent.prototype.ngOnInit = function () {
+    AppComponent.prototype.setCoin = function (coin) {
+        this.coin = coin;
+        console.log(this.appTitle);
+        this.getCoinData();
+    };
+    /*
+      ngOnInit() : void{
+        this._data.getData(this.coin)
+          .subscribe(data => this.iData = data);
+          //this.bids = this._data.bids;
+          
+          //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
+          //currently used interface to to define eash data but its not working;
+      }
+    */
+    AppComponent.prototype.getCoinData = function () {
         var _this = this;
         this._data.getData(this.coin)
             .subscribe(function (data) { return _this.iData = data; });
-        //this.bids = this._data.bids;
-        //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
-        //currently used interface to to define eash data but its not working;
     };
     AppComponent = __decorate([
         core_1.Component({

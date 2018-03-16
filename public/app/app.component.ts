@@ -21,6 +21,13 @@ export class AppComponent {
   constructor(private _data : DataService){
   }
 
+  setCoin(coin:string):void{
+    this.coin = coin;
+    console.log(this.appTitle);
+
+    this.getCoinData();
+  }
+/*
   ngOnInit() : void{
     this._data.getData(this.coin)
       .subscribe(data => this.iData = data);
@@ -28,7 +35,10 @@ export class AppComponent {
       
       //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
       //currently used interface to to define eash data but its not working;
-
-      
+  }
+*/
+  getCoinData():void{
+    this._data.getData(this.coin)
+    .subscribe(data => this.iData = data);
   }
 }
