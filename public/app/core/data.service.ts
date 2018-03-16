@@ -18,7 +18,6 @@ export class DataService {
     queryParam :string  = null;
     baseUrl: string ;
     anyDatas : any;
-    bids : any[];
     binanceData : IData;
 
     constructor(private http: HttpClient) { 
