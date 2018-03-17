@@ -45,7 +45,6 @@ var AppComponent = /** @class */ (function () {
             //</div> `,
             templateUrl: './app.component.html',
             providers: [data_service_1.DataService]
-            //TODO check what does provider does
         }),
         __metadata("design:paramtypes", [data_service_1.DataService])
     ], AppComponent);

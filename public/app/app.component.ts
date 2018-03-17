@@ -11,8 +11,8 @@ import { Observer } from 'rxjs/Observer';
   templateUrl: './app.component.html',
   providers: [DataService]
 
-  //TODO check what does provider does
 })
+
 export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;

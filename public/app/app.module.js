@@ -30,4 +30,10 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+TO;
+DO;
+instal;
+angular - cli.json;
+check;
+tutorial;
 //# sourceMappingURL=app.module.js.map
