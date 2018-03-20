@@ -19,21 +19,11 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.setCoin = function (coin) {
         this.coin = coin.toUpperCase();
         console.log(this.appTitle);
-        this.getCoinData();
+        this.getCoinData(this.coin);
     };
-    /*
-      ngOnInit() : void{
-        this._data.getData(this.coin)
-          .subscribe(data => this.iData = data);
-          //this.bids = this._data.bids;
-          
-          //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
-          //currently used interface to to define eash data but its not working;
-      }
-    */
-    AppComponent.prototype.getCoinData = function () {
+    AppComponent.prototype.getCoinData = function (coin) {
         var _this = this;
-        this._data.getData(this.coin)
+        this._data.getData(coin)
             .subscribe(function (data) { return _this.iData = data; });
     };
     AppComponent = __decorate([

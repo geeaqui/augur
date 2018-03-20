@@ -25,9 +25,15 @@ export class AppComponent {
     this.coin = coin.toUpperCase();
     console.log(this.appTitle);
 
-    this.getCoinData();
+    this.getCoinData(this.coin);
   }
-/*
+
+  getCoinData(coin:string):void{
+    this._data.getData(coin)
+    .subscribe(data => this.iData = data);
+  }
+
+  /*
   ngOnInit() : void{
     this._data.getData(this.coin)
       .subscribe(data => this.iData = data);
@@ -37,8 +43,4 @@ export class AppComponent {
       //currently used interface to to define eash data but its not working;
   }
 */
-  getCoinData():void{
-    this._data.getData(this.coin)
-    .subscribe(data => this.iData = data);
-  }
 }

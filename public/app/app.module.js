@@ -12,6 +12,7 @@ var app_component_1 = require("./app.component");
 //import { appRouting } from './app.routing';
 var core_module_1 = require("./core/core.module");
 //import { SharedModule }   from './shared/shared.module';
+var angular2_materialize_1 = require("angular2-materialize");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -19,9 +20,8 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                // appRouting.routes, 
-                core_module_1.CoreModule //Singleton objects
-                //SharedModule  //Shared (multi-instance) objects
+                core_module_1.CoreModule,
+                angular2_materialize_1.MaterializeModule
             ],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent] // This is used to tell Angular JS which components need to be loaded so that its functionality can be accessed in the application. Once you include the component in the bootstrap array, you need to declare them so that they can be used across other components in the Angular JS application.
@@ -30,10 +30,4 @@ var AppModule = /** @class */ (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
-TO;
-DO;
-instal;
-angular - cli.json;
-check;
-tutorial;
 //# sourceMappingURL=app.module.js.map

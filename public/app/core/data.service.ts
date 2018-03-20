@@ -35,7 +35,7 @@ export class DataService {
         .map((response : Response) => {
             console.log("find me");
             console.log(this.baseUrl);
-            //console.log(JSON.parse(JSON.stringify(response)));
+        
             this.binanceData = {
                 bids: this.getBids(response),
                 asks:this.getAsk(response),

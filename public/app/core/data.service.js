@@ -34,7 +34,6 @@ var DataService = /** @class */ (function () {
             .map(function (response) {
             console.log("find me");
             console.log(_this.baseUrl);
-            //console.log(JSON.parse(JSON.stringify(response)));
             _this.binanceData = {
                 bids: _this.getBids(response),
                 asks: _this.getAsk(response),

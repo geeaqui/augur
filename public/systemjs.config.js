@@ -4,8 +4,12 @@
   var map = {
     'app':        'app', // 'dist',
     '@angular':   'lib/@angular',
+    'angular2-materialize':'lib/angular2-materialize',
     'rxjs':       'lib/rxjs',
-    'tslib':      'lib'
+    'tslib':      'lib',
+    'plugin-babel': 'lib/systemjs-plugin-babel/plugin-babel.js',
+    'systemjs-babel-build': 'lib/systemjs-plugin-babel/systemjs-babel-browser.js',
+    'jquery':'lib/jquery'
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -21,7 +25,9 @@
     },
     'rxjs':                 { defaultExtension: 'js' },
     'tslib':                { main: 'tslib', defaultExtension: 'js' },
-    '@angular/common/http': { main: '../bundles/common-http.umd.js', defaultExtension: 'js' }
+    '@angular/common/http': { main: '../bundles/common-http.umd.js', defaultExtension: 'js' },
+    'angular2-materialize': { main: 'dist/index', defaultExtension: 'js' },
+    'jquery': { main: 'dist/jquery.min.js', defaultExtension: 'js' }
   };
 
   var ngPackageNames = [
@@ -53,7 +59,8 @@
 
   var config = {
     map: map,
-    packages: packages
+    packages: packages,
+    transpiler: 'plugin-babel'
   };
 
   System.config(config);
