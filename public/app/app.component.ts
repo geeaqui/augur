@@ -9,6 +9,7 @@ import { Observer } from 'rxjs/Observer';
   //<div>To Tutorials Point</div>
 //</div> `,
   templateUrl: './app.component.html',
+  styleUrls: ['../css/styles.css'],
   providers: [DataService]
 
 })

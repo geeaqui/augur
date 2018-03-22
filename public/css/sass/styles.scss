@@ -1,3 +1,18 @@
-*{
+body{
 
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    #askBid{
+        text-align: center;
+
+        li{
+            font-size: 12px;
+            display: inline-block;
+
+            span{
+                font-weight: bold;
+            }
+        }
+    }
 }
+

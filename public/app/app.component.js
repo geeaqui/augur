@@ -34,6 +34,7 @@ var AppComponent = /** @class */ (function () {
             //<div>To Tutorials Point</div>
             //</div> `,
             templateUrl: './app.component.html',
+            styleUrls: ['../css/styles.css'],
             providers: [data_service_1.DataService]
         }),
         __metadata("design:paramtypes", [data_service_1.DataService])
