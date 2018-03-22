@@ -19,27 +19,30 @@
         </li>
       </ul>
 
-<div id="askBid" >
-    <div>
+<div id="askBid" class="row">
+    <div class="col s12">
+        
         <h1>{{coin}}</h1>
-        <h5>BUY</h5>
-        <div *ngFor = 'let bids of iData.bids' id="bids">
-            <ul>
-                <li>AMOUNT: {{bids[0]}}</li>
-                <li>COIN SOLD: {{bids[1]}}</li>
-            </ul>
-        </div>
-    </div>
 
-    <div>
-        <h5>SELL</h5>
-        <div *ngFor = 'let asks of iData.asks' id="asks">
-            
-            <ul>
-                <li>AMOUNT: {{asks[0]}}</li>
-                <li>COIN SOLD: {{asks[1]}}</li>
-            </ul>
+        <div class="col m6">
+            <h5>BUY</h5>
+            <div *ngFor = 'let bids of iData.bids' id="bids">
+                <ul>
+                    <li>AMOUNT: {{bids[0]}}</li>
+                    <li>COIN SOLD: {{bids[1]}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col m6">
+            <h5>SELL</h5>
+            <div *ngFor = 'let asks of iData.asks' id="asks">
+                
+                <ul>
+                    <li>AMOUNT: {{asks[0]}}</li>
+                    <li>COIN SOLD: {{asks[1]}}</li>
+                </ul>
+            </div>
         </div>
     </div>    
 </div>
-<div>
