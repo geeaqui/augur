@@ -18,6 +18,7 @@ export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;
   coin : string;
+  showData: boolean = false;
   
   constructor(private _data : DataService){
   }
@@ -27,6 +28,7 @@ export class AppComponent {
     console.log(this.appTitle);
 
     this.getCoinData(this.coin);
+    this.showData = true;
   }
 
   getCoinData(coin:string):void{

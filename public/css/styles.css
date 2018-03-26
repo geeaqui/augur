@@ -1,9 +1,1 @@
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  body #askBid {
-    text-align: center; }
-    body #askBid li {
-      font-size: 12px;
-      display: inline-block; }
-      body #askBid li span {
-        font-weight: bold; }
+body{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif}body #askBid{text-align:center}body #askBid li{font-size:12px;display:inline-block}body #askBid li span{font-weight:bold}

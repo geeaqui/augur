@@ -15,11 +15,13 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(_data) {
         this._data = _data;
         this.appTitle = "Binance First Data Output";
+        this.showData = false;
     }
     AppComponent.prototype.setCoin = function (coin) {
         this.coin = coin.toUpperCase();
         console.log(this.appTitle);
         this.getCoinData(this.coin);
+        this.showData = true;
     };
     AppComponent.prototype.getCoinData = function (coin) {
         var _this = this;
