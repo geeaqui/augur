@@ -16,6 +16,21 @@ var AppComponent = /** @class */ (function () {
         this._data = _data;
         this.appTitle = "Binance First Data Output";
         this.showData = false;
+        this.coinList = [
+            "TRX", "ETH", "QTUM", "BNB", "ICX", "QLC",
+            "ONT", "XRP", "EOS", "ADA", "DGD", "DNT", "LTC",
+            "XLM", "ENJ", "NEBL", "NCASH", "MTL", "NANO", "TNT",
+            "STORM", "GVT", "BCC", "BQX", "IOTA", "WAN", "AION", "XVG",
+            "POA", "FUEL", "VEN", "VIB", "ETC", "DASH", "CTR", "NULS",
+            "LINK", "STRAT", "BCD", "XMR", "WAVES", "XEM", "AST", "SUB",
+            "OMG", "REQ", "BCPT", "SNT", "EDO", "WTC", "RCN", "BTG", "EVX",
+            "SALT", "INS", "ELF", "MCO", "ZIL", "TRIG", "POWR", "TNB", "LEND",
+            "LSK", "APPC", "KNC", "BLZ", "SNGLS", "CMT", "GTO", "POE", "CND", "CDT",
+            "NAV", "ADX", "WABI", "LUN", "GAS", "AMB", "VIBE", "OST", "ARK", "ZRX",
+            "ZEC", "QSP", "LRC", "MOD", "HSR", "ARN", "RPX", "FUN", "MDA", "GXS", "MTH",
+            "CHAT", "MANA", "PIVX", "STEEM", "AE", "WINGS", "BTS", "SNM", "BRD", "RLC",
+            "KMD", "OAX", "DLT", "XZC", "BAT", "RDN", "ICN", "VIA", "YOYO", "STORJ", "BNT"
+        ];
     }
     AppComponent.prototype.setCoin = function (coin) {
         this.coin = coin.toUpperCase();
