@@ -1,7 +1,38 @@
 body{
     
+    nav{
+        background-color: #272A2E;
+
+        li:hover{
+            background-color: #ADB5C4;
+            
+            a:hover{
+                color:#272A2E;
+            }
+        }
+    }
+    
     .coin-card{
         display: inline-block;
+        #coin-image{
+            width: 50px;
+            height: 25px;
+        }
+    }
+
+    .card-action{
+        text-align: center;
+
+        button{
+            color:#ADB5C4;
+            background-color: #272A2E;
+            border: 0;
+            border-radius: 5px;
+            padding: 5px 15px;
+            -webkit-box-shadow: -5px 4px 12px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: -5px 4px 12px -1px rgba(0,0,0,0.75);
+            box-shadow: -5px 4px 12px -1px rgba(0,0,0,0.75);
+        }
     }
 
 

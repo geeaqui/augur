@@ -51,6 +51,10 @@ export class AppComponent {
     .subscribe(data => this.iData = data);
   }
 
+  goToHomepage(){
+    this.showData = false;
+  }
+
   /*
   ngOnInit() : void{
     this._data.getData(this.coin)

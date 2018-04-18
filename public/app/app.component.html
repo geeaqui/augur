@@ -1,18 +1,19 @@
-<div>{{appTitle}} API - AuGur Point</div>
+<!-- <div>{{appTitle}} API - AuGur Point</div> -->
+
 
 <div class="container row">
 <div *ngIf="!showData" class="coinCard">
     <div *ngFor = 'let coin of coinList'>
-            <div class="coin-card col s2 m2">
+            <div class="coin-card col s6 m3 l2">
                 <div class="card">
                     <div class="card-image">
-                    <img src="images/bitcoin-logo.png">
+                    <img id ="coin-image" src="images/bitcoin-logo.png">
                     <!-- <span class="card-title">Card Title</span> -->
                     </div>
                     <div class="card-content">
-                    <p>1 BTC = .00001</p>
+                    <!-- <p>1 BTC = .00001</p> -->
                     </div>
-                    <div class="card-action">
+                    <div class="card-action s6 m3 l2">
                         <button (click)="setCoin(coin)">{{coin}}/BTC</button>
                     </div>
                 </div>

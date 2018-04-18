@@ -43,6 +43,9 @@ var AppComponent = /** @class */ (function () {
         this._data.getData(coin)
             .subscribe(function (data) { return _this.iData = data; });
     };
+    AppComponent.prototype.goToHomepage = function () {
+        this.showData = false;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-tag',
