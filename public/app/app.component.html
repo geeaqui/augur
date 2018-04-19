@@ -1,7 +1,7 @@
 <div class="container row">
 <div *ngIf="!showData" class="coinCard">
     <div *ngFor = 'let coin of newCoinList'>
-            <div class="coin-card col s6 m3 l2">
+            <div class="coin-card col s6 m4 l2">
                 <div class="card">
                     <div class="card-image">
                     <img id ="coin-image" src="images/bitcoin-logo.png">
@@ -12,8 +12,9 @@
                     <div *ngFor = 'let data of marketData'>
 
                         <div *ngIf="data.symbol == coin">
-                            <p>BTC = ${{data.price_usd}}</p>
-                            <p>Rank {{data.rank}}</p> 
+                            <p id="coin__name">{{data.name}}</p>
+                            <p id="coin__conversion">1 BTC = ${{data.price_usd}}</p>
+                            <p id="coin__rank">Rank <span>{{data.rank}}</span></p> 
                         </div>       
                             
                     </div>
