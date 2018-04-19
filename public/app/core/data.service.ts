@@ -10,6 +10,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
 import {IData} from '../shared/interface'
+import { forEach } from '@angular/router/src/utils/collection';
 
 //import { ICustomer, IOrder, IState, IPagedResults, ICustomerResponse } from '../shared/interfaces';
 
@@ -19,11 +20,32 @@ export class DataService {
     baseUrl: string ;
     anyDatas : any;
     binanceData : IData;
+    marketPrice:any[];
+
+    coinList:Array<string> = [
+        "TRX","ETH","QTUM","BNB","ICX","QLC",
+        "ONT","XRP","EOS","ADA","DGD","DNT","LTC",
+        "XLM","ENJ","NEBL","NCASH","MTL","NANO","TNT",
+        "STORM","GVT","BCC","BQX","IOTA","WAN","AION","XVG",
+        "POA","FUEL","VEN","VIB","ETC","DASH","CTR","NULS",
+        "LINK","STRAT","BCD","XMR","WAVES","XEM","AST","SUB",
+        "OMG","REQ","BCPT","SNT","EDO","WTC","RCN","BTG","EVX",
+        "SALT","INS","ELF","MCO","ZIL","TRIG","POWR","TNB","LEND",
+        "LSK","APPC","KNC","BLZ","SNGLS","CMT","GTO","POE","CND","CDT",
+        "NAV","ADX","WABI","LUN","GAS","AMB","VIBE","OST","ARK","ZRX",
+        "ZEC","QSP","LRC","MOD","HSR","ARN","RPX","FUN","MDA","GXS","MTH",
+        "CHAT","MANA","PIVX","STEEM","AE","WINGS","BTS","SNM","BRD","RLC",
+        "KMD","OAX","DLT","XZC","BAT","RDN","ICN","VIA","YOYO","STORJ","BNT"
+      ];
+
+    newCoinList:Array<string> = new Array;
+
 
     constructor(private http: HttpClient) { 
 
     }
 
+    //Binance API
    getData(coin :string) : Observable<IData>{
 
     this.queryParam = coin;
@@ -60,6 +82,33 @@ export class DataService {
         let res = JSON.parse(JSON.stringify(response));
         return res.asks;
     }
+    //Binance API END
+
+    //MarketCap API
+    getMarketPrice() : Observable<any>{
+        this.baseUrl= '/marketprice';
+    
+        console.log('getting the data on the back-end');
+        console.log(this.baseUrl);
+        return this.http.get(this.baseUrl)
+            .map((response : Response) => {
+                this.marketPrice = JSON.parse(JSON.stringify(response));
+
+                for(let coin of this.marketPrice){
+                    for(let list of this.coinList){
+                        if(coin.symbol == list){
+                            this.newCoinList.push(coin.symbol);
+                        }
+                    }
+
+                }
+                console.log("new List of coins");
+                console.log(this.newCoinList);
+                return this.marketPrice;
+            })
+            .catch(this.handleError);
+        }
+
 
     private handleError(error: HttpErrorResponse) {
         console.error('server error:', error); 

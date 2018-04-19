@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from './core/data.service';
 import { Observer } from 'rxjs/Observer';
+import { Observable } from 'rxjs/Observable';
 
 @Component({ 
   selector: 'app-tag', // custom html tag which can be used in the html page
@@ -17,25 +18,23 @@ import { Observer } from 'rxjs/Observer';
 export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;
+  marketData:any[];
   coin : string;
   showData: boolean = false;
-  coinList:Array<string> = [
-                            "TRX","ETH","QTUM","BNB","ICX","QLC",
-                            "ONT","XRP","EOS","ADA","DGD","DNT","LTC",
-                            "XLM","ENJ","NEBL","NCASH","MTL","NANO","TNT",
-                            "STORM","GVT","BCC","BQX","IOTA","WAN","AION","XVG",
-                            "POA","FUEL","VEN","VIB","ETC","DASH","CTR","NULS",
-                            "LINK","STRAT","BCD","XMR","WAVES","XEM","AST","SUB",
-                            "OMG","REQ","BCPT","SNT","EDO","WTC","RCN","BTG","EVX",
-                            "SALT","INS","ELF","MCO","ZIL","TRIG","POWR","TNB","LEND",
-                            "LSK","APPC","KNC","BLZ","SNGLS","CMT","GTO","POE","CND","CDT",
-                            "NAV","ADX","WABI","LUN","GAS","AMB","VIBE","OST","ARK","ZRX",
-                            "ZEC","QSP","LRC","MOD","HSR","ARN","RPX","FUN","MDA","GXS","MTH",
-                            "CHAT","MANA","PIVX","STEEM","AE","WINGS","BTS","SNM","BRD","RLC",
-                            "KMD","OAX","DLT","XZC","BAT","RDN","ICN","VIA","YOYO","STORJ","BNT"
-                          ];
-  
+  showCard:boolean = true;
+  newCoinList:Array<string>;
+
   constructor(private _data : DataService){
+  }
+
+  //initialize on the page without the need of invoking it
+  ngOnInit(){
+   this._data.getMarketPrice()
+      .subscribe(data => {
+        this.marketData = data;
+        this.newCoinList = this._data.newCoinList;
+        console.log(data);
+      });
   }
 
   setCoin(coin:string):void{
@@ -54,7 +53,7 @@ export class AppComponent {
   goToHomepage(){
     this.showData = false;
   }
-
+}
   /*
   ngOnInit() : void{
     this._data.getData(this.coin)
@@ -65,4 +64,3 @@ export class AppComponent {
       //currently used interface to to define eash data but its not working;
   }
 */
-}

@@ -1,9 +1,6 @@
-<!-- <div>{{appTitle}} API - AuGur Point</div> -->
-
-
 <div class="container row">
 <div *ngIf="!showData" class="coinCard">
-    <div *ngFor = 'let coin of coinList'>
+    <div *ngFor = 'let coin of newCoinList'>
             <div class="coin-card col s6 m3 l2">
                 <div class="card">
                     <div class="card-image">
@@ -12,6 +9,14 @@
                     </div>
                     <div class="card-content">
                     <!-- <p>1 BTC = .00001</p> -->
+                    <div *ngFor = 'let data of marketData'>
+
+                        <div *ngIf="data.symbol == coin">
+                            <p>BTC = ${{data.price_usd}}</p>
+                            <p>Rank {{data.rank}}</p> 
+                        </div>       
+                            
+                    </div>
                     </div>
                     <div class="card-action s6 m3 l2">
                         <button (click)="setCoin(coin)">{{coin}}/BTC</button>

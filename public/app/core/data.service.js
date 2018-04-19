@@ -23,7 +23,24 @@ var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.queryParam = null;
+        this.coinList = [
+            "TRX", "ETH", "QTUM", "BNB", "ICX", "QLC",
+            "ONT", "XRP", "EOS", "ADA", "DGD", "DNT", "LTC",
+            "XLM", "ENJ", "NEBL", "NCASH", "MTL", "NANO", "TNT",
+            "STORM", "GVT", "BCC", "BQX", "IOTA", "WAN", "AION", "XVG",
+            "POA", "FUEL", "VEN", "VIB", "ETC", "DASH", "CTR", "NULS",
+            "LINK", "STRAT", "BCD", "XMR", "WAVES", "XEM", "AST", "SUB",
+            "OMG", "REQ", "BCPT", "SNT", "EDO", "WTC", "RCN", "BTG", "EVX",
+            "SALT", "INS", "ELF", "MCO", "ZIL", "TRIG", "POWR", "TNB", "LEND",
+            "LSK", "APPC", "KNC", "BLZ", "SNGLS", "CMT", "GTO", "POE", "CND", "CDT",
+            "NAV", "ADX", "WABI", "LUN", "GAS", "AMB", "VIBE", "OST", "ARK", "ZRX",
+            "ZEC", "QSP", "LRC", "MOD", "HSR", "ARN", "RPX", "FUN", "MDA", "GXS", "MTH",
+            "CHAT", "MANA", "PIVX", "STEEM", "AE", "WINGS", "BTS", "SNM", "BRD", "RLC",
+            "KMD", "OAX", "DLT", "XZC", "BAT", "RDN", "ICN", "VIA", "YOYO", "STORJ", "BNT"
+        ];
+        this.newCoinList = new Array;
     }
+    //Binance API
     DataService.prototype.getData = function (coin) {
         var _this = this;
         this.queryParam = coin;
@@ -54,6 +71,31 @@ var DataService = /** @class */ (function () {
     DataService.prototype.getAsk = function (response) {
         var res = JSON.parse(JSON.stringify(response));
         return res.asks;
+    };
+    //Binance API END
+    //MarketCap API
+    DataService.prototype.getMarketPrice = function () {
+        var _this = this;
+        this.baseUrl = '/marketprice';
+        console.log('getting the data on the back-end');
+        console.log(this.baseUrl);
+        return this.http.get(this.baseUrl)
+            .map(function (response) {
+            _this.marketPrice = JSON.parse(JSON.stringify(response));
+            for (var _i = 0, _a = _this.marketPrice; _i < _a.length; _i++) {
+                var coin = _a[_i];
+                for (var _b = 0, _c = _this.coinList; _b < _c.length; _b++) {
+                    var list = _c[_b];
+                    if (coin.symbol == list) {
+                        _this.newCoinList.push(coin.symbol);
+                    }
+                }
+            }
+            console.log("new List of coins");
+            console.log(_this.newCoinList);
+            return _this.marketPrice;
+        })
+            .catch(this.handleError);
     };
     DataService.prototype.handleError = function (error) {
         console.error('server error:', error);

@@ -16,22 +16,18 @@ var AppComponent = /** @class */ (function () {
         this._data = _data;
         this.appTitle = "Binance First Data Output";
         this.showData = false;
-        this.coinList = [
-            "TRX", "ETH", "QTUM", "BNB", "ICX", "QLC",
-            "ONT", "XRP", "EOS", "ADA", "DGD", "DNT", "LTC",
-            "XLM", "ENJ", "NEBL", "NCASH", "MTL", "NANO", "TNT",
-            "STORM", "GVT", "BCC", "BQX", "IOTA", "WAN", "AION", "XVG",
-            "POA", "FUEL", "VEN", "VIB", "ETC", "DASH", "CTR", "NULS",
-            "LINK", "STRAT", "BCD", "XMR", "WAVES", "XEM", "AST", "SUB",
-            "OMG", "REQ", "BCPT", "SNT", "EDO", "WTC", "RCN", "BTG", "EVX",
-            "SALT", "INS", "ELF", "MCO", "ZIL", "TRIG", "POWR", "TNB", "LEND",
-            "LSK", "APPC", "KNC", "BLZ", "SNGLS", "CMT", "GTO", "POE", "CND", "CDT",
-            "NAV", "ADX", "WABI", "LUN", "GAS", "AMB", "VIBE", "OST", "ARK", "ZRX",
-            "ZEC", "QSP", "LRC", "MOD", "HSR", "ARN", "RPX", "FUN", "MDA", "GXS", "MTH",
-            "CHAT", "MANA", "PIVX", "STEEM", "AE", "WINGS", "BTS", "SNM", "BRD", "RLC",
-            "KMD", "OAX", "DLT", "XZC", "BAT", "RDN", "ICN", "VIA", "YOYO", "STORJ", "BNT"
-        ];
+        this.showCard = true;
     }
+    //initialize on the page without the need of invoking it
+    AppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._data.getMarketPrice()
+            .subscribe(function (data) {
+            _this.marketData = data;
+            _this.newCoinList = _this._data.newCoinList;
+            console.log(data);
+        });
+    };
     AppComponent.prototype.setCoin = function (coin) {
         this.coin = coin.toUpperCase();
         console.log(this.appTitle);
@@ -62,4 +58,14 @@ var AppComponent = /** @class */ (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+/*
+ngOnInit() : void{
+  this._data.getData(this.coin)
+    .subscribe(data => this.iData = data);
+    //this.bids = this._data.bids;
+    
+    //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
+    //currently used interface to to define eash data but its not working;
+}
+*/
 //# sourceMappingURL=app.component.js.map
