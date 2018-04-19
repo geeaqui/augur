@@ -5,7 +5,13 @@ body nav {
     body nav li:hover a:hover {
       color: #272A2E; }
 
+body .card-content {
+  height: 200px;
+  text-align: center;
+  margin-top: 50%; }
+
 body .coin-card {
+  position: relative;
   display: inline-block; }
   body .coin-card #coin-image {
     width: 50px;
@@ -21,7 +27,31 @@ body .card-action {
     padding: 5px 15px;
     -webkit-box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
-    box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75); }
+    box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
+    transition: 1s;
+    font-weight: bold; }
+  body .card-action button:hover {
+    color: #f5a700; }
+
+body #coin__name {
+  font-size: 22px;
+  font-weight: bold; }
+
+body #coin__rank {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-weight: bold; }
+  body #coin__rank span {
+    display: inline-block;
+    background-color: #272A2E;
+    color: #f5a700;
+    width: 40px;
+    height: 40px;
+    margin-top: 2px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px; }
 
 body #askBid {
   text-align: center; }

@@ -11,9 +11,16 @@ body{
             }
         }
     }
-    
+    .card-content{
+        height:200px;
+        text-align: center;
+        margin-top: 50%;
+    }
+
     .coin-card{
+        position: relative;
         display: inline-block;
+
         #coin-image{
             width: 50px;
             height: 25px;
@@ -32,9 +39,38 @@ body{
             -webkit-box-shadow: -5px 4px 12px -1px rgba(0,0,0,0.75);
             -moz-box-shadow: -5px 4px 12px -1px rgba(0,0,0,0.75);
             box-shadow: -5px 4px 12px -1px rgba(0,0,0,0.75);
+            transition: 1s;
+            font-weight: bold;
+        }
+
+        button:hover{
+            color:#f5a700;
         }
     }
 
+    #coin__name{
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    #coin__rank{
+        position: absolute;
+        top:0px;
+        right:10px;
+        font-weight: bold;
+
+        span{
+            display: inline-block;
+            background-color: #272A2E;
+            color:#f5a700;
+            width: 40px;
+            height: 40px;
+            margin-top: 2px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+        }
+    }
 
     #askBid{
         text-align: center;
