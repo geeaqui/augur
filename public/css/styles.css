@@ -1,1 +1,32 @@
-body nav{background-color:#272A2E}body nav li:hover{background-color:#ADB5C4}body nav li:hover a:hover{color:#272A2E}body .coin-card{display:inline-block}body .coin-card #coin-image{width:50px;height:25px}body .card-action{text-align:center}body .card-action button{color:#ADB5C4;background-color:#272A2E;border:0;border-radius:5px;padding:5px 15px;-webkit-box-shadow:-5px 4px 12px -1px rgba(0,0,0,0.75);-moz-box-shadow:-5px 4px 12px -1px rgba(0,0,0,0.75);box-shadow:-5px 4px 12px -1px rgba(0,0,0,0.75)}body #askBid{text-align:center}body #askBid li{font-size:12px;display:inline-block}body #askBid li span{font-weight:bold}
+body nav {
+  background-color: #272A2E; }
+  body nav li:hover {
+    background-color: #ADB5C4; }
+    body nav li:hover a:hover {
+      color: #272A2E; }
+
+body .coin-card {
+  display: inline-block; }
+  body .coin-card #coin-image {
+    width: 50px;
+    height: 25px; }
+
+body .card-action {
+  text-align: center; }
+  body .card-action button {
+    color: #ADB5C4;
+    background-color: #272A2E;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 15px;
+    -webkit-box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75); }
+
+body #askBid {
+  text-align: center; }
+  body #askBid li {
+    font-size: 12px;
+    display: inline-block; }
+    body #askBid li span {
+      font-weight: bold; }
