@@ -1,3 +1,5 @@
+//@import 'coinpage';
+
 body{
     
     nav{
@@ -14,7 +16,6 @@ body{
     .card-content{
         height:200px;
         text-align: center;
-        margin-top: 50%;
     }
 
     .coin-card{
@@ -49,8 +50,12 @@ body{
     }
 
     #coin__name{
-        font-size: 22px;
+        //font-size: 22px;
+        width: 100%;
+        font-size: 100%;
         font-weight: bold;
+        border-bottom: 2px solid #000;
+        margin-top: 20%;
     }
 
     #coin__rank{
@@ -86,3 +91,63 @@ body{
     }
 }
 
+
+//coin table page
+#sell_column{
+
+    .border___rows{
+        div.col.s6{
+            padding: 0;
+        }
+
+        ul{
+            border-bottom:1px solid #000;
+            margin:0;
+            font-weight: bold;
+        }
+        ul:nth-child(even) {
+            //background: red;
+            //color:#fff;
+            //opacity:.7;
+            background:rgba(211, 1, 1, 0.1);
+            
+        }
+    } 
+}
+
+//coin table page
+#buy_column{
+
+    .border___rows{
+        div.col.s6{
+            padding: 0;
+        }
+
+        ul{
+            border-bottom:1px solid #000;
+            margin:0;
+            font-weight: bold;
+        }
+        ul:nth-child(even) {
+            background: rgba(3, 129, 9, 0.1);
+            //color:#fff;
+            opacity:.7;
+        }
+    } 
+}
+
+#buy_column{
+    .border___rows{
+        ul{
+            //color:green;
+        }
+    }
+}
+
+#sell_column{
+    .border___rows{
+        ul{
+            //color:red;
+        }
+    }
+}

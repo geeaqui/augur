@@ -7,8 +7,7 @@ body nav {
 
 body .card-content {
   height: 200px;
-  text-align: center;
-  margin-top: 50%; }
+  text-align: center; }
 
 body .coin-card {
   position: relative;
@@ -34,8 +33,11 @@ body .card-action {
     color: #f5a700; }
 
 body #coin__name {
-  font-size: 22px;
-  font-weight: bold; }
+  width: 100%;
+  font-size: 100%;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  margin-top: 20%; }
 
 body #coin__rank {
   position: absolute;
@@ -60,3 +62,26 @@ body #askBid {
     display: inline-block; }
     body #askBid li span {
       font-weight: bold; }
+
+#sell_column .border___rows div.col.s6 {
+  padding: 0; }
+
+#sell_column .border___rows ul {
+  border-bottom: 1px solid #000;
+  margin: 0;
+  font-weight: bold; }
+
+#sell_column .border___rows ul:nth-child(even) {
+  background: rgba(211, 1, 1, 0.1); }
+
+#buy_column .border___rows div.col.s6 {
+  padding: 0; }
+
+#buy_column .border___rows ul {
+  border-bottom: 1px solid #000;
+  margin: 0;
+  font-weight: bold; }
+
+#buy_column .border___rows ul:nth-child(even) {
+  background: rgba(3, 129, 9, 0.1);
+  opacity: .7; }

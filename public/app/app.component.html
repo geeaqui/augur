@@ -1,7 +1,7 @@
 <div class="container row">
 <div *ngIf="!showData" class="coinCard">
     <div *ngFor = 'let coin of newCoinList'>
-            <div class="coin-card col s6 m4 l2">
+            <div class="coin-card col s6 m4 l3">
                 <div class="card">
                     <div class="card-image">
                     <img id ="coin-image" src="images/bitcoin-logo.png">
@@ -13,8 +13,10 @@
 
                         <div *ngIf="data.symbol == coin">
                             <p id="coin__name">{{data.name}}</p>
-                            <p id="coin__conversion">1 BTC = ${{data.price_usd}}</p>
+                            <p id="coin__conversion">Price: ${{data.price_usd}}</p>
                             <p id="coin__rank">Rank <span>{{data.rank}}</span></p> 
+                            <p>Total Supply {{data.total_supply | number}}</p>
+                            <!-- <p>Circulating Supply {{data.available_supply | number}}</p> -->
                         </div>       
                             
                     </div>
@@ -34,59 +36,63 @@
         
         <h1 id="coin">{{coin}}</h1>
 
-        <div id="buy_column" class="col m6">
-            <h5>BUY</h5>
-
-            <div class="col s6">
-                <h6>AMOUNT</h6>
-                <div *ngIf="iData != null">
-                    <div *ngFor = 'let bids of iData.bids' id="bids">
-                            <ul>
-                                <li>{{bids[0]}}</li>
-                            </ul>
+        <div id="buy_column" class="col m6 l4 offset-l2">
+            
+            <!-- <h5>BUY</h5> -->
+            
+            <div class="border___rows">
+                <div class="col s6">
+                    <h6>AMOUNT</h6>
+                    <div *ngIf="iData != null">
+                        <div >
+                                <ul *ngFor = 'let bids of iData.bids'>
+                                    <li>{{bids[0]}}</li>
+                                </ul>
+                        </div>
                     </div>
-                 </div>
-            </div>
+                </div>
 
-            <div class="col s6">
-                <h6>COIN BOUGHT</h6>
-                <div *ngIf="iData != null">
-                    <div *ngFor = 'let bids of iData.bids' id="bids">
-                            <ul>
-                                <li>{{bids[1]}}</li>
-                            </ul>
+                <div class="col s6">
+                    <h6>COIN BOUGHT</h6>
+                    <div *ngIf="iData != null">
+                        <div >
+                                <ul *ngFor = 'let bids of iData.bids'>
+                                    <li>{{bids[1] | number}}</li>
+                                </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="sell_column" class="col m6">
+        <div id="sell_column" class="col m6 l4">
             
-            <h5>SELL</h5>
-            
-            <div class="col s6">
-                <h6>AMOUNT</h6>
-                <div *ngIf="iData != null">
-                    <div *ngFor = 'let asks of iData.asks' id="asks">
-                    
-                            <ul>
-                                <li>{{asks[0]}}</li>
-                            </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col s6">
-
-                    <h6>COIN SOLD</h6>
+            <!-- <h5>SELL</h5> -->
+            <div class="border___rows">
+                
+                <div class="col s6">
+                    <h6>AMOUNT</h6>
                     <div *ngIf="iData != null">
-                        <div *ngFor = 'let asks of iData.asks' id="asks">
+                        <div >
                         
-                                <ul>
-                                    <li>{{asks[1]}}</li>
+                                <ul *ngFor = 'let asks of iData.asks'>
+                                    <li>{{asks[0]}}</li>
                                 </ul>
                         </div>
                     </div>
+                </div>
+
+                <div class="col s6">
+
+                        <h6>COIN SOLD</h6>
+                        <div *ngIf="iData != null">
+                            <div>
+                                <ul *ngFor = 'let asks of iData.asks'>
+                                    <li>{{asks[1] | number}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
     </div>    
