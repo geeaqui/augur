@@ -49,12 +49,10 @@ var DataService = /** @class */ (function () {
         console.log(this.baseUrl);
         return this.http.get(this.baseUrl)
             .map(function (response) {
-            console.log("find me");
-            console.log(_this.baseUrl);
             _this.binanceData = {
                 bids: _this.getBids(response),
                 asks: _this.getAsk(response),
-                updateId: 1234
+                updateId: 1234 // sample ID
             };
             console.log("Binace Data log");
             console.log(_this.binanceData);
@@ -73,6 +71,22 @@ var DataService = /** @class */ (function () {
         return res.asks;
     };
     //Binance API END
+    //Binance API 2
+    DataService.prototype.getCoinAcivity = function () {
+        var _this = this;
+        this.baseUrl = '/marketprice/' + this.queryParam; // get the query param once getData() is invoke
+        console.log('getting the data on the back-end');
+        console.log(this.baseUrl);
+        return this.http.get(this.baseUrl)
+            .map(function (response) {
+            _this.coinActivityData = JSON.parse(JSON.stringify(response));
+            console.log("sample lang");
+            console.log(_this.coinActivityData);
+            return _this.coinActivityData;
+        })
+            .catch(this.handleError);
+    };
+    //Binance API 2 END
     //MarketCap API
     DataService.prototype.getMarketPrice = function () {
         var _this = this;

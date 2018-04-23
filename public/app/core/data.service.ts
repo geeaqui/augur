@@ -21,6 +21,7 @@ export class DataService {
     anyDatas : any;
     binanceData : IData;
     marketPrice:any[];
+    coinActivityData:any[];
 
     coinList:Array<string> = [
         "TRX","ETH","QTUM","BNB","ICX","QLC",
@@ -55,14 +56,13 @@ export class DataService {
     console.log(this.baseUrl);
     return this.http.get(this.baseUrl, )
         .map((response : Response) => {
-            console.log("find me");
-            console.log(this.baseUrl);
         
             this.binanceData = {
                 bids: this.getBids(response),
                 asks:this.getAsk(response),
-                updateId: 1234
+                updateId: 1234 // sample ID
             }
+
             console.log("Binace Data log");
             console.log(this.binanceData);
             this.anyDatas = JSON.parse(JSON.stringify(response));
@@ -84,8 +84,28 @@ export class DataService {
     }
     //Binance API END
 
+
+    //Binance API 2
+    getCoinAcivity() : Observable<any>{
+        this.baseUrl= '/marketprice/'+ this.queryParam; // get the query param once getData() is invoke
+    
+        console.log('getting the data on the back-end');
+        console.log(this.baseUrl);
+        return this.http.get(this.baseUrl)
+            .map((response : Response) => {
+                this.coinActivityData = JSON.parse(JSON.stringify(response));
+
+                console.log("sample lang");
+                console.log(this.coinActivityData);
+                return this.coinActivityData;
+            })
+            .catch(this.handleError);
+        }
+    //Binance API 2 END
+
     //MarketCap API
     getMarketPrice() : Observable<any>{
+
         this.baseUrl= '/marketprice';
     
         console.log('getting the data on the back-end');

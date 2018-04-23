@@ -33,11 +33,25 @@ var AppComponent = /** @class */ (function () {
         console.log(this.appTitle);
         this.getCoinData(this.coin);
         this.showData = true;
+        this.getCoinActivity();
     };
     AppComponent.prototype.getCoinData = function (coin) {
         var _this = this;
         this._data.getData(coin)
             .subscribe(function (data) { return _this.iData = data; });
+    };
+    AppComponent.prototype.getCoinActivity = function () {
+        var _this = this;
+        this._data.getCoinAcivity()
+            .subscribe(function (data) {
+            _this.coinActivityLog = data;
+            if (data.priceChangePercent.startsWith("-")) {
+                _this.changeColor = "stop";
+            }
+            else {
+                _this.changeColor = "go";
+            }
+        });
     };
     AppComponent.prototype.goToHomepage = function () {
         this.showData = false;

@@ -34,7 +34,19 @@
 <div *ngIf="showData" id="askBid" class="container row">
     <div class="col s12">
         
-        <h1 id="coin">{{coin}}</h1>
+        <!-- <h1 id="coin">{{coin}}</h1> -->
+        <h4>{{coinActivityLog.symbol}}</h4>
+
+        <div class="col s12">
+            <ul id="coin_activity_data">
+                <li><p>Price</p> {{coinActivityLog.lastPrice}}</li>
+                <li><p>24h Low</p>{{coinActivityLog.lowPrice}}</li>
+                <li><p>24h High</p>{{coinActivityLog.highPrice}}</li>
+                <li class="{{changeColor}}">{{coinActivityLog.priceChangePercent}}</li>
+                <li><p>Number of Transactions</p>{{coinActivityLog.count | number}}</li>
+                <li></li>
+            </ul>
+        </div>
 
         <div id="buy_column" class="col m6 l4 offset-l2">
             

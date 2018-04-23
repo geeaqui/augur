@@ -18,11 +18,13 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;
+  coinActivityLog: any;
   marketData:any[];
   coin : string;
   showData: boolean = false;
   showCard:boolean = true;
   newCoinList:Array<string>;
+  changeColor:string;
 
   constructor(private _data : DataService){
   }
@@ -43,11 +45,25 @@ export class AppComponent {
 
     this.getCoinData(this.coin);
     this.showData = true;
+    this.getCoinActivity();
   }
 
   getCoinData(coin:string):void{
     this._data.getData(coin)
     .subscribe(data => this.iData = data);
+  }
+
+  getCoinActivity():void{
+    this._data.getCoinAcivity()
+    .subscribe(data => {
+      this.coinActivityLog = data;
+
+      if(data.priceChangePercent.startsWith("-")){
+        this.changeColor = "stop";
+      }else{
+        this.changeColor = "go";
+      }
+    });
   }
 
   goToHomepage(){
