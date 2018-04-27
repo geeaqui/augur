@@ -5,10 +5,19 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({ 
   selector: 'app-tag', // custom html tag which can be used in the html page
-  //template: ` <div>
-  //<div>{{iData}}</div>
-  //<div>To Tutorials Point</div>
-//</div> `,
+  /*
+  template: `
+    <div>
+    <input type="text" [(ngModel)]="term">
+    <div *ngFor = "let coin of newCoinList |filter:term" >
+      <p>
+        {{coin}}
+      </p>
+    </div>
+
+</div>  
+`,
+*/
   templateUrl: './app.component.html',
   styleUrls: ['../css/styles.css'],
   providers: [DataService]
@@ -24,7 +33,8 @@ export class AppComponent {
   showData: boolean = false;
   showCard:boolean = true;
   newCoinList:Array<string>;
-  changeColor:string;
+  goStop:string;
+  filterMe:string = "";
 
   constructor(private _data : DataService){
   }
@@ -59,9 +69,9 @@ export class AppComponent {
       this.coinActivityLog = data;
 
       if(data.priceChangePercent.startsWith("-")){
-        this.changeColor = "stop";
+        this.goStop = "stop";
       }else{
-        this.changeColor = "go";
+        this.goStop = "go";
       }
     });
   }
@@ -69,7 +79,15 @@ export class AppComponent {
   goToHomepage(){
     this.showData = false;
   }
+
+  findSingleCoin(coin:string): void{
+    this.newCoinList =[];
+    this.newCoinList.push(coin);
+    console.log(this.newCoinList);
+  }
 }
+
+
   /*
   ngOnInit() : void{
     this._data.getData(this.coin)

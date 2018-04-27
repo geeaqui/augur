@@ -9,6 +9,7 @@
     'tslib':      'lib',
     'plugin-babel': 'lib/systemjs-plugin-babel/plugin-babel.js',
     'systemjs-babel-build': 'lib/systemjs-plugin-babel/systemjs-babel-browser.js',
+    'ng2-search-filter': 'lib/ng2-search-filter',
   };
 
   // packages tells the System loader how to load when no filename and/or no extension
@@ -26,6 +27,7 @@
     'tslib':                { main: 'tslib', defaultExtension: 'js' },
     '@angular/common/http': { main: '../bundles/common-http.umd.js', defaultExtension: 'js' },
     'angular2-materialize': { main: 'dist/index', defaultExtension: 'js' },
+    'ng2-search-filter': { main: 'ng2-search-filter.js' },
   };
 
   var ngPackageNames = [

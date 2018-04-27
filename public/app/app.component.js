@@ -17,6 +17,7 @@ var AppComponent = /** @class */ (function () {
         this.appTitle = "Binance First Data Output";
         this.showData = false;
         this.showCard = true;
+        this.filterMe = "";
     }
     //initialize on the page without the need of invoking it
     AppComponent.prototype.ngOnInit = function () {
@@ -46,23 +47,37 @@ var AppComponent = /** @class */ (function () {
             .subscribe(function (data) {
             _this.coinActivityLog = data;
             if (data.priceChangePercent.startsWith("-")) {
-                _this.changeColor = "stop";
+                _this.goStop = "stop";
             }
             else {
-                _this.changeColor = "go";
+                _this.goStop = "go";
             }
         });
     };
     AppComponent.prototype.goToHomepage = function () {
         this.showData = false;
     };
+    AppComponent.prototype.findSingleCoin = function (coin) {
+        this.newCoinList = [];
+        this.newCoinList.push(coin);
+        console.log(this.newCoinList);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-tag',
-            //template: ` <div>
-            //<div>{{iData}}</div>
-            //<div>To Tutorials Point</div>
-            //</div> `,
+            /*
+            template: `
+              <div>
+              <input type="text" [(ngModel)]="term">
+              <div *ngFor = "let coin of newCoinList |filter:term" >
+                <p>
+                  {{coin}}
+                </p>
+              </div>
+          
+          </div>
+          `,
+          */
             templateUrl: './app.component.html',
             styleUrls: ['../css/styles.css'],
             providers: [data_service_1.DataService]
