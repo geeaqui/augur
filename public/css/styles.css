@@ -5,6 +5,17 @@ body {
     border: 1px solid black; }
   body #searched__link {
     margin-top: 3%; }
+  body #search_coin_input {
+    position: relative; }
+    body #search_coin_input input {
+      text-indent: 30px; }
+    body #search_coin_input span {
+      position: absolute;
+      top: 24px;
+      left: 7px;
+      font-size: 15px; }
+  body #search_coin_input:hover {
+    background-color: transparent; }
   body #coin___search___list {
     display: block;
     width: 100px;
@@ -14,7 +25,7 @@ body {
       width: 100px;
       height: 100px; }
   body #coin___search___list {
-    background: none; }
+    background: none !important; }
   body nav {
     position: fixed;
     top: 0;

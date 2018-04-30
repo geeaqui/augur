@@ -11,6 +11,27 @@ body{
         margin-top:3%;
     }
 
+    #search_coin_input 
+    {
+        position:relative;
+
+        input{
+            text-indent: 30px;
+        }
+
+        span{
+            position: absolute;
+            top: 24px;
+            left: 7px;
+            font-size: 15px;
+        }
+    }
+        
+
+    #search_coin_input:hover{
+        background-color: transparent;
+    }
+
     #coin___search___list{
         display: block;
         width: 100px;
@@ -24,7 +45,7 @@ body{
     }
 
     #coin___search___list{
-        background: none;
+        background: none !important;
     }
 
     font-family: 'Open Sans', sans-serif;
