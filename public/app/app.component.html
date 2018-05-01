@@ -7,9 +7,7 @@
 
 <div id="searched__links" *ngIf="filterMe != ''">
     <div *ngFor = "let coin of newCoinList |filter:filterMe" id="coin__searched">
-      <p>
-        <a (click)="findSingleCoin(coin)" href="#{{coin}}">{{coin}}</a>
-      </p>
+      <p><a (click)="findSingleCoin(coin)" href="#{{coin}}">{{coin}}</a></p>
     </div>
 </div>  
 

@@ -2,7 +2,13 @@ body {
   font-family: 'Open Sans', sans-serif; }
   body #coin__searched {
     z-index: 1;
-    border: 1px solid black; }
+    border: 1px solid #26a69a;
+    width: 200px;
+    margin-left: 3%;
+    background-color: #272A2E;
+    text-indent: 20px; }
+    body #coin__searched a {
+      color: #fff; }
   body #searched__link {
     margin-top: 3%; }
   body #search_coin_input {
