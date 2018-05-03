@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { DataService } from './core/data.service';
 import { Observer } from 'rxjs/Observer';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
+import {Observable} from 'rxjs/Rx';
 
 @Component({ 
   selector: 'app-tag', // custom html tag which can be used in the html page
