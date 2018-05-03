@@ -60,5 +60,9 @@
     "@angular/cli": "^1.7.3",
     "concurrently": "^3.5.1",
     "typescript": "^2.7.2"
+  },
+  "engine":{
+    "node": "6.10.3",
+    "npm": "4.6.1"
   }
 }
