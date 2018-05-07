@@ -85,7 +85,7 @@ export class AppComponent {
     this.newCoinList =[];
     this.newCoinList.push(coin);
     console.log(this.newCoinList);
-    
+    this.filterMe = "";
   }
 }
 

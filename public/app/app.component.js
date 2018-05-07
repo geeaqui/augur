@@ -61,6 +61,7 @@ var AppComponent = /** @class */ (function () {
         this.newCoinList = [];
         this.newCoinList.push(coin);
         console.log(this.newCoinList);
+        this.filterMe = "";
     };
     AppComponent = __decorate([
         core_1.Component({
