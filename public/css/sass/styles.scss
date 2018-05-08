@@ -8,8 +8,16 @@ body{
         margin-left: 3%;
         position: fixed;
         z-index: 1;
-    }
 
+        p{
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        p:hover{
+            background-color: #26a69a;
+        }
+    }
 
     #coin__searched{
         z-index: 1;

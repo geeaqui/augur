@@ -1,1 +1,155 @@
-body{font-family:'Open Sans', sans-serif}body #searched__links{margin-top:-35px;margin-left:3%;position:fixed;z-index:1}body #coin__searched{z-index:1;border:1px solid #26a69a;width:200px;background-color:#272A2E;text-indent:20px}body #coin__searched a{color:#fff}body #search_coin_input{position:relative}body #search_coin_input input{text-indent:30px}body #search_coin_input span{position:absolute;top:24px;left:7px;font-size:15px}body #search_coin_input:hover{background-color:transparent}body #coin___search___list{display:block;width:100px;height:100px;color:black}body #coin___search___list a{width:100px;height:100px}body #coin___search___list{background:none !important}body nav{position:fixed;top:0;z-index:1;background-color:#272A2E}body nav ul{position:relative}body nav li:hover{background-color:#ADB5C4}body nav li:hover a:hover{color:#272A2E}body nav #home_logo img{width:30px;height:30px;position:absolute;top:0;left:0}body #hompage_card_container{margin-top:100px}body .card-content{height:200px;text-align:center}body .coin-card{position:relative;display:inline-block}body .coin-card #coin-image{width:50px;height:25px}body .card-action{text-align:center}body .card-action button{color:#ADB5C4;background-color:#272A2E;border:0;border-radius:5px;padding:5px 15px;-webkit-box-shadow:-5px 4px 12px -1px rgba(0,0,0,0.75);-moz-box-shadow:-5px 4px 12px -1px rgba(0,0,0,0.75);box-shadow:-5px 4px 12px -1px rgba(0,0,0,0.75);transition:1s;font-weight:bold}body .card-action button:hover{color:#f5a700}body #coin__name{width:100%;font-size:100%;font-weight:bold;border-bottom:2px solid #000;margin-top:20%}body #coin__rank{position:absolute;top:0px;right:10px;font-weight:bold}body #coin__rank span{display:inline-block;background-color:#272A2E;color:#f5a700;width:40px;height:40px;margin-top:2px;border-radius:50%;text-align:center;line-height:40px}body #askBid{text-align:center}body #askBid li{font-size:12px;display:inline-block}body #askBid li span{font-weight:bold}#sell_column .border___rows div.col.s6{padding:0}#sell_column .border___rows ul{border-bottom:1px solid #000;margin:0;font-weight:bold}#sell_column .border___rows ul:nth-child(even){background:rgba(211,1,1,0.1)}#buy_column .border___rows div.col.s6{padding:0}#buy_column .border___rows ul{border-bottom:1px solid #000;margin:0;font-weight:bold}#buy_column .border___rows ul:nth-child(even){background:rgba(3,129,9,0.1);opacity:.7}#coin_activity_data{-webkit-box-shadow:0px 6px 5px -4px #a19ca1;-moz-box-shadow:0px 6px 5px -4px #a19ca1;box-shadow:0px 6px 5px -4px #a19ca1}#coin_activity_data li{padding-left:20px;padding-right:20px}#coin_activity_data p{font-size:14px}#coin_activity_data span{font-size:16px;font-weight:bold}.go{color:green}.stop{color:red}
+body {
+  font-family: 'Open Sans', sans-serif; }
+  body #searched__links {
+    margin-top: -35px;
+    margin-left: 3%;
+    position: fixed;
+    z-index: 1; }
+    body #searched__links p {
+      margin: 0;
+      padding: 10px 0; }
+    body #searched__links p:hover {
+      background-color: #26a69a; }
+  body #coin__searched {
+    z-index: 1;
+    border: 1px solid #26a69a;
+    width: 200px;
+    background-color: #272A2E;
+    text-indent: 20px; }
+    body #coin__searched a {
+      color: #fff; }
+  body #search_coin_input {
+    position: relative; }
+    body #search_coin_input input {
+      text-indent: 30px; }
+    body #search_coin_input span {
+      position: absolute;
+      top: 24px;
+      left: 7px;
+      font-size: 15px; }
+  body #search_coin_input:hover {
+    background-color: transparent; }
+  body #coin___search___list {
+    display: block;
+    width: 100px;
+    height: 100px;
+    color: black; }
+    body #coin___search___list a {
+      width: 100px;
+      height: 100px; }
+  body #coin___search___list {
+    background: none !important; }
+  body nav {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: #272A2E; }
+    body nav ul {
+      position: relative; }
+    body nav li:hover {
+      background-color: #ADB5C4; }
+      body nav li:hover a:hover {
+        color: #272A2E; }
+    body nav #home_logo img {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      left: 0; }
+  body #hompage_card_container {
+    margin-top: 100px; }
+  body .card-content {
+    height: 200px;
+    text-align: center; }
+  body .coin-card {
+    position: relative;
+    display: inline-block; }
+    body .coin-card #coin-image {
+      width: 50px;
+      height: 25px; }
+  body .card-action {
+    text-align: center; }
+    body .card-action button {
+      color: #ADB5C4;
+      background-color: #272A2E;
+      border: 0;
+      border-radius: 5px;
+      padding: 5px 15px;
+      -webkit-box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
+      box-shadow: -5px 4px 12px -1px rgba(0, 0, 0, 0.75);
+      transition: 1s;
+      font-weight: bold; }
+    body .card-action button:hover {
+      color: #f5a700; }
+  body #coin__name {
+    width: 100%;
+    font-size: 100%;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+    margin-top: 20%; }
+  body #coin__rank {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-weight: bold; }
+    body #coin__rank span {
+      display: inline-block;
+      background-color: #272A2E;
+      color: #f5a700;
+      width: 40px;
+      height: 40px;
+      margin-top: 2px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px; }
+  body #askBid {
+    text-align: center; }
+    body #askBid li {
+      font-size: 12px;
+      display: inline-block; }
+      body #askBid li span {
+        font-weight: bold; }
+
+#sell_column .border___rows div.col.s6 {
+  padding: 0; }
+
+#sell_column .border___rows ul {
+  border-bottom: 1px solid #000;
+  margin: 0;
+  font-weight: bold; }
+
+#sell_column .border___rows ul:nth-child(even) {
+  background: rgba(211, 1, 1, 0.1); }
+
+#buy_column .border___rows div.col.s6 {
+  padding: 0; }
+
+#buy_column .border___rows ul {
+  border-bottom: 1px solid #000;
+  margin: 0;
+  font-weight: bold; }
+
+#buy_column .border___rows ul:nth-child(even) {
+  background: rgba(3, 129, 9, 0.1);
+  opacity: .7; }
+
+/**********Binance 2 coin data api**************/
+#coin_activity_data {
+  -webkit-box-shadow: 0px 6px 5px -4px #a19ca1;
+  -moz-box-shadow: 0px 6px 5px -4px #a19ca1;
+  box-shadow: 0px 6px 5px -4px #a19ca1; }
+  #coin_activity_data li {
+    padding-left: 20px;
+    padding-right: 20px; }
+  #coin_activity_data p {
+    font-size: 14px; }
+  #coin_activity_data span {
+    font-size: 16px;
+    font-weight: bold; }
+
+.go {
+  color: green; }
+
+.stop {
+  color: red; }

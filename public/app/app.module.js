@@ -13,7 +13,6 @@ var app_component_1 = require("./app.component");
 var core_module_1 = require("./core/core.module");
 //import { SharedModule }   from './shared/shared.module';
 var angular2_materialize_1 = require("angular2-materialize");
-//import { Ng2SearchPipeModule } from 'ng2-search-filter';
 var forms_1 = require("@angular/forms");
 var filter_pipe_1 = require("./filter.pipe");
 var AppModule = /** @class */ (function () {
@@ -25,7 +24,6 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule,
                 core_module_1.CoreModule,
                 angular2_materialize_1.MaterializeModule,
-                //Ng2SearchPipeModule,
                 forms_1.FormsModule
             ],
             declarations: [app_component_1.AppComponent, filter_pipe_1.FilterPipe],

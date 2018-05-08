@@ -66,19 +66,6 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-tag',
-            /*
-            template: `
-              <div>
-              <input type="text" [(ngModel)]="term">
-              <div *ngFor = "let coin of newCoinList |filter:term" >
-                <p>
-                  {{coin}}
-                </p>
-              </div>
-          
-          </div>
-          `,
-          */
             templateUrl: './app.component.html',
             styleUrls: ['../css/styles.css'],
             providers: [data_service_1.DataService]
@@ -88,14 +75,4 @@ var AppComponent = /** @class */ (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-/*
-ngOnInit() : void{
-  this._data.getData(this.coin)
-    .subscribe(data => this.iData = data);
-    //this.bids = this._data.bids;
-    
-    //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
-    //currently used interface to to define eash data but its not working;
-}
-*/
 //# sourceMappingURL=app.component.js.map

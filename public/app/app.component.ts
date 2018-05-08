@@ -6,19 +6,6 @@ import {Observable} from 'rxjs/Rx';
 
 @Component({ 
   selector: 'app-tag', // custom html tag which can be used in the html page
-  /*
-  template: `
-    <div>
-    <input type="text" [(ngModel)]="term">
-    <div *ngFor = "let coin of newCoinList |filter:term" >
-      <p>
-        {{coin}}
-      </p>
-    </div>
-
-</div>  
-`,
-*/
   templateUrl: './app.component.html',
   styleUrls: ['../css/styles.css'],
   providers: [DataService]
@@ -89,14 +76,3 @@ export class AppComponent {
   }
 }
 
-
-  /*
-  ngOnInit() : void{
-    this._data.getData(this.coin)
-      .subscribe(data => this.iData = data);
-      //this.bids = this._data.bids;
-      
-      //TODO how to display separate data bids,asks and Id instead of getting eveything as a whole;
-      //currently used interface to to define eash data but its not working;
-  }
-*/

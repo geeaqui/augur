@@ -7,7 +7,8 @@
 
 <div id="searched__links" *ngIf="filterMe != ''">
     <div *ngFor = "let coin of newCoinList | filter:filterMe" id="coin__searched">
-      <p><a (click)="findSingleCoin(coin)" href="#{{coin}}">{{coin}}</a></p>
+      <!-- <p><a (click)="findSingleCoin(coin)" href="#{{coin}}">{{coin}}</a></p> -->
+      <p (click)="findSingleCoin(coin)"><a href="#{{coin}}">{{coin}}</a></p>
     </div>
 </div>  
 
@@ -63,7 +64,7 @@
             </ul>
         </div>
 
-        <div id="buy_column" class="col m6 l4 offset-l2">
+        <div id="buy_column" class="col s12 m6 l4 offset-l2">
             
             <!-- <h5>BUY</h5> -->
             
@@ -92,7 +93,7 @@
             </div>
         </div>
 
-        <div id="sell_column" class="col m6 l4">
+        <div id="sell_column" class="col s12 m6 l4">
             
             <!-- <h5>SELL</h5> -->
             <div class="border___rows">
