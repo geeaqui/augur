@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var data_service_1 = require("./core/data.service");
+var animations_1 = require("@angular/animations");
 var AppComponent = /** @class */ (function () {
     function AppComponent(_data) {
         this._data = _data;
@@ -18,6 +19,8 @@ var AppComponent = /** @class */ (function () {
         this.showData = false;
         this.showCard = true;
         this.filterMe = "";
+        this.testState = "active";
+        this.thisFly = "out";
     }
     //initialize on the page without the need of invoking it
     AppComponent.prototype.ngOnInit = function () {
@@ -35,6 +38,7 @@ var AppComponent = /** @class */ (function () {
         this.getCoinData(this.coin);
         this.showData = true;
         this.getCoinActivity();
+        //this.flyIn();
     };
     AppComponent.prototype.getCoinData = function (coin) {
         var _this = this;
@@ -68,7 +72,37 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-tag',
             templateUrl: './app.component.html',
             styleUrls: ['../css/styles.css'],
-            providers: [data_service_1.DataService]
+            providers: [data_service_1.DataService],
+            animations: [
+                animations_1.trigger('thisState', [
+                    animations_1.state('inactive', animations_1.style({
+                        backgroundColor: '#eee',
+                        transform: 'scale(1)'
+                    })),
+                    animations_1.state('active', animations_1.style({
+                        backgroundColor: '#cfd8dc',
+                        transform: 'scale(1.5)'
+                    })),
+                    animations_1.transition('inactive => active', animations_1.animate('100ms ease-in')),
+                    animations_1.transition('active => inactive', animations_1.animate('100ms ease-out'))
+                ]),
+                animations_1.trigger('flyInOut', [
+                    animations_1.state('in', animations_1.style({ opacity: 1, transform: 'translateX(0)' })),
+                    animations_1.transition('void => *', [
+                        animations_1.style({
+                            opacity: 0,
+                            transform: 'translateX(-100%)'
+                        }),
+                        animations_1.animate('1s ease-in')
+                    ]),
+                    animations_1.transition('* => void', [
+                        animations_1.animate('1s 1s ease-out', animations_1.style({
+                            opacity: 0,
+                            transform: 'translateX(100%)'
+                        }))
+                    ])
+                ])
+            ]
         }),
         __metadata("design:paramtypes", [data_service_1.DataService])
     ], AppComponent);

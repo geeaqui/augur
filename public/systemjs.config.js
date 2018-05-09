@@ -26,6 +26,14 @@
     'tslib':                { main: 'tslib', defaultExtension: 'js' },
     '@angular/common/http': { main: '../bundles/common-http.umd.js', defaultExtension: 'js' },
     'angular2-materialize': { main: 'dist/index', defaultExtension: 'js' },
+
+    '@angular/animations': { main: '/bundles/animations.umd.js', defaultExtension: 'js' },
+    '@angular/animations/browser': { main: '../bundles/animations.umd.js', defaultExtension: 'js' },
+    '@angular/platform-browser': {main : '/bundles/platform-browser-animations.umd.js', defaultExtension: 'js'},
+    '@angular/animations/browser': {main : 'bundles/animations-browser.umd.js', defaultExtension: 'js'},
+    '@angular/platform-browser/animations': {main : '../bundles/platform-browser-animations.umd.js', defaultExtension: 'js'},
+
+
   };
 
   var ngPackageNames = [

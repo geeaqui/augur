@@ -1,15 +1,45 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { DataService } from './core/data.service';
 import { Observer } from 'rxjs/Observer';
 //import { Observable } from 'rxjs/Observable';
 import {Observable} from 'rxjs/Rx';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({ 
   selector: 'app-tag', // custom html tag which can be used in the html page
   templateUrl: './app.component.html',
   styleUrls: ['../css/styles.css'],
-  providers: [DataService]
-
+  providers: [DataService],
+  animations:[
+    trigger('thisState', [
+      state('inactive', style({
+        backgroundColor: '#eee',
+        transform: 'scale(1)'
+      })),
+      state('active', style({
+        backgroundColor: '#cfd8dc',
+        transform: 'scale(1.5)'
+      })),
+      transition('inactive => active', animate('100ms ease-in')),
+      transition('active => inactive', animate('100ms ease-out'))
+    ]),
+    trigger('flyInOut', [
+      state('in', style({opacity: 1, transform: 'translateX(0)'})),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate('1s ease-in')
+      ]),
+      transition('* => void', [
+        animate('1s 1s ease-out', style({
+          opacity: 0,
+          transform: 'translateX(100%)'
+        }))
+      ])
+    ])
+  ]
 })
 
 export class AppComponent {
@@ -23,6 +53,9 @@ export class AppComponent {
   newCoinList:Array<string>;
   goStop:string;
   filterMe:string = "";
+  testState:string = "active";
+
+  thisFly:string = "out";
 
   constructor(private _data : DataService){
   }
@@ -44,6 +77,7 @@ export class AppComponent {
     this.getCoinData(this.coin);
     this.showData = true;
     this.getCoinActivity();
+    //this.flyIn();
   }
 
   getCoinData(coin:string):void{
@@ -73,6 +107,17 @@ export class AppComponent {
     this.newCoinList.push(coin);
     console.log(this.newCoinList);
     this.filterMe = "";
+    
+
   }
+/*
+  flyIn() {
+    this.thisFly = this.thisFly === 'in' ? 'out' : 'in';
+    console.log(this.thisFly);
+  }
+  */
 }
+
+
+
 

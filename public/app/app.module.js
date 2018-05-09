@@ -15,6 +15,7 @@ var core_module_1 = require("./core/core.module");
 var angular2_materialize_1 = require("angular2-materialize");
 var forms_1 = require("@angular/forms");
 var filter_pipe_1 = require("./filter.pipe");
+var animations_1 = require("@angular/platform-browser/animations");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,7 +25,8 @@ var AppModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule,
                 core_module_1.CoreModule,
                 angular2_materialize_1.MaterializeModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                animations_1.BrowserAnimationsModule
             ],
             declarations: [app_component_1.AppComponent, filter_pipe_1.FilterPipe],
             bootstrap: [app_component_1.AppComponent] // This is used to tell Angular JS which components need to be loaded so that its functionality can be accessed in the application. Once you include the component in the bootstrap array, you need to declare them so that they can be used across other components in the Angular JS application.

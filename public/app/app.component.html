@@ -1,6 +1,6 @@
 <nav id="augur__nav">
     <ul>
-        <li><a href="/">Augur</a></li>
+        <li><a (click)="goToHomepage()">Augur</a></li>
         <li *ngIf="!showData" id="search_coin_input"><span class="fa fa-search"></span><input type="text" [(ngModel)]="filterMe" placeholder="Find coin..."></li>
     </ul>
 </nav>
@@ -13,40 +13,50 @@
 </div>  
 
 <div id="hompage_card_container" class="container row">
-    <div *ngIf="!showData" class="coinCard">
-        <div *ngFor = 'let coin of newCoinList'>
-                <div class="coin-card col s6 m4 l3">
-                    <div id='{{coin}}' class="card">
-                        <div class="card-image">
-                        <img id ="coin-image" src="images/bitcoin-logo.png">
-                        <!-- <span class="card-title">Card Title</span> -->
-                        </div>
-                        <div class="card-content">
-                        <!-- <p>1 BTC = .00001</p> -->
-                        <div *ngFor = 'let data of marketData'>
+    
+    
+    <div *ngIf="!showData" class="coinCard">   
+        <ul *ngFor = 'let coin of newCoinList'>
+        <!-- <div *ngFor = 'let coin of newCoinList'> -->
+              
+                    <li [@flyInOut]="thisFly">
+                            <div class="coin-card col s6 m4 l3">
+                                    <div  id='{{coin}}' class="card">
+                                        <div class="card-image">
+                                        <img id ="coin-image" src="images/bitcoin-logo.png">
+                                        <!-- <span class="card-title">Card Title</span> -->
+                                        </div>
+                                        <div class="card-content">
+                                        <!-- <p>1 BTC = .00001</p> -->
+                                        <div *ngFor = 'let data of marketData'>
+                
+                                            <div *ngIf="data.symbol == coin">
+                                                <p id="coin__name">{{data.name}}</p>
+                                                <p id="coin__conversion">Price: ${{data.price_usd}}</p>
+                                                <p id="coin__rank">Rank <span>{{data.rank}}</span></p> 
+                                                <p>Total Supply {{data.total_supply | number}}</p>
+                                                <!-- <p>Circulating Supply {{data.available_supply | number}}</p> -->
+                                            </div>       
+                                                
+                                        </div>
+                                        </div>
+                                        <div class="card-action s6 m3 l2">
+                                            <button (click)="setCoin(coin)">{{coin}}/BTC</button>
+                                        </div>
+                                    </div>
+                                </div>
+                    </li>
+                
 
-                            <div *ngIf="data.symbol == coin">
-                                <p id="coin__name">{{data.name}}</p>
-                                <p id="coin__conversion">Price: ${{data.price_usd}}</p>
-                                <p id="coin__rank">Rank <span>{{data.rank}}</span></p> 
-                                <p>Total Supply {{data.total_supply | number}}</p>
-                                <!-- <p>Circulating Supply {{data.available_supply | number}}</p> -->
-                            </div>       
-                                
-                        </div>
-                        </div>
-                        <div class="card-action s6 m3 l2">
-                            <button (click)="setCoin(coin)">{{coin}}/BTC</button>
-                        </div>
-                    </div>
-                </div>
-        </div>
+                
+        <!-- </div> -->
+        </ul>
     </div>
 </div>
 
 
 <div *ngIf="showData" id="askBid" class="container row">
-    <div class="col s12">
+    <div [@flyInOut]="thisFly" class="col s12">
         
         <!-- <h1 id="coin">{{coin}}</h1> -->
         <!-- <h4>{{coinActivityLog.symbol}}</h4> -->
