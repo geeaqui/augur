@@ -11,6 +11,14 @@ export interface IData{
     updateId : number
 }
 
+export interface IMarketData {
+    symbol:string,
+    name :string,
+    price:number,
+    rank:number,
+    supply:number
+}
+
 export class Product { 
     constructor ( 
        public bids: any[], 

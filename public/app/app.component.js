@@ -16,20 +16,25 @@ var AppComponent = /** @class */ (function () {
     function AppComponent(_data) {
         this._data = _data;
         this.appTitle = "Binance First Data Output";
+        //marketData:any[];
+        this.marketData = new Array();
         this.showData = false;
         this.showCard = true;
         this.filterMe = "";
         this.testState = "active";
-        this.thisFly = "out";
+        this.resetCoidList = new Array();
+        this.thisFly = "in";
     }
     //initialize on the page without the need of invoking it
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._data.getMarketPrice()
             .subscribe(function (data) {
-            _this.marketData = data;
+            //this.marketData = data;
+            console.log("test check the marketing data");
+            console.log(_this._data.marketDataList);
+            _this.marketData = _this._data.marketDataList;
             _this.newCoinList = _this._data.newCoinList;
-            console.log(data);
         });
     };
     AppComponent.prototype.setCoin = function (coin) {
@@ -60,12 +65,16 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.goToHomepage = function () {
         this.showData = false;
+        this.resetCoinList();
     };
     AppComponent.prototype.findSingleCoin = function (coin) {
         this.newCoinList = [];
         this.newCoinList.push(coin);
         console.log(this.newCoinList);
         this.filterMe = "";
+    };
+    AppComponent.prototype.resetCoinList = function () {
+        this.newCoinList = this._data.marketCoinList;
     };
     AppComponent = __decorate([
         core_1.Component({

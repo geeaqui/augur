@@ -31,10 +31,14 @@
                                         <div *ngFor = 'let data of marketData'>
                 
                                             <div *ngIf="data.symbol == coin">
-                                                <p id="coin__name">{{data.name}}</p>
+                                                <!-- <p id="coin__name">{{data.name}}</p>
                                                 <p id="coin__conversion">Price: ${{data.price_usd}}</p>
                                                 <p id="coin__rank">Rank <span>{{data.rank}}</span></p> 
-                                                <p>Total Supply {{data.total_supply | number}}</p>
+                                                <p>Total Supply {{data.total_supply | number}}</p> -->
+                                                <p id="coin__name">{{data.name}}</p>
+                                                <p id="coin__conversion">Price: ${{data.price}}</p>
+                                                <p id="coin__rank">Rank <span>{{data.rank}}</span></p> 
+                                                <p>Total Supply {{data.supply| number}}</p>
                                                 <!-- <p>Circulating Supply {{data.available_supply | number}}</p> -->
                                             </div>       
                                                 

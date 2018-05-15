@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
-import {IData} from '../shared/interface'
+import {IData, IMarketData} from '../shared/interface'
 import { forEach } from '@angular/router/src/utils/collection';
 
 //import { ICustomer, IOrder, IState, IPagedResults, ICustomerResponse } from '../shared/interfaces';
@@ -22,6 +22,10 @@ export class DataService {
     binanceData : IData;
     marketPrice:any[];
     coinActivityData:any[];
+    marketCoinList:Array<string> = Array<string>();
+
+    marketDataList:Array<IMarketData> = new Array<IMarketData>();
+    marketData: IMarketData;
 
     coinList:Array<string> = [
         "TRX","ETH","QTUM","BNB","ICX","QLC",
@@ -39,7 +43,7 @@ export class DataService {
         "KMD","OAX","DLT","XZC","BAT","RDN","ICN","VIA","YOYO","STORJ","BNT"
       ];
 
-    newCoinList:Array<string> = new Array;
+    newCoinList:Array<string> = new Array<string>();
 
 
     constructor(private http: HttpClient) { 
@@ -118,14 +122,32 @@ export class DataService {
                     for(let list of this.coinList){
                         if(coin.symbol == list){
                             this.newCoinList.push(coin.symbol);
+
+                            //saving all the data from market cap to the interface class
+                            this.marketData = {
+                                symbol:coin.symbol,
+                                name : coin.name,
+                                price: coin.price_usd,
+                                rank: coin.rank,
+                                supply: coin.total_supply
+                            }
+                            this.marketDataList.push(this.marketData);
+
                         }
                     }
 
                 }
+
+                //added this to reset coin when newCoinList is deleted on app.component.ts method
+                this.marketCoinList = this.newCoinList;
+
                 console.log("new List of coins");
                 console.log(this.newCoinList);
+
+
                 return this.marketPrice;
             })
+
             .catch(this.handleError);
         }
 

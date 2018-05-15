@@ -23,6 +23,8 @@ var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.queryParam = null;
+        this.marketCoinList = Array();
+        this.marketDataList = new Array();
         this.coinList = [
             "TRX", "ETH", "QTUM", "BNB", "ICX", "QLC",
             "ONT", "XRP", "EOS", "ADA", "DGD", "DNT", "LTC",
@@ -38,7 +40,7 @@ var DataService = /** @class */ (function () {
             "CHAT", "MANA", "PIVX", "STEEM", "AE", "WINGS", "BTS", "SNM", "BRD", "RLC",
             "KMD", "OAX", "DLT", "XZC", "BAT", "RDN", "ICN", "VIA", "YOYO", "STORJ", "BNT"
         ];
-        this.newCoinList = new Array;
+        this.newCoinList = new Array();
     }
     //Binance API
     DataService.prototype.getData = function (coin) {
@@ -102,9 +104,20 @@ var DataService = /** @class */ (function () {
                     var list = _c[_b];
                     if (coin.symbol == list) {
                         _this.newCoinList.push(coin.symbol);
+                        //saving all the data from market cap to the interface class
+                        _this.marketData = {
+                            symbol: coin.symbol,
+                            name: coin.name,
+                            price: coin.price_usd,
+                            rank: coin.rank,
+                            supply: coin.total_supply
+                        };
+                        _this.marketDataList.push(_this.marketData);
                     }
                 }
             }
+            //added this to reset coin when newCoinList is deleted on app.component.ts method
+            _this.marketCoinList = _this.newCoinList;
             console.log("new List of coins");
             console.log(_this.newCoinList);
             return _this.marketPrice;

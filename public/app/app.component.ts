@@ -4,6 +4,7 @@ import { Observer } from 'rxjs/Observer';
 //import { Observable } from 'rxjs/Observable';
 import {Observable} from 'rxjs/Rx';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { IMarketData } from './shared/interface';
 
 @Component({ 
   selector: 'app-tag', // custom html tag which can be used in the html page
@@ -46,7 +47,8 @@ export class AppComponent {
   appTitle : string = "Binance First Data Output";
   iData : any;
   coinActivityLog: any;
-  marketData:any[];
+  //marketData:any[];
+  marketData:Array<IMarketData> = new Array<IMarketData>();
   coin : string;
   showData: boolean = false;
   showCard:boolean = true;
@@ -54,8 +56,8 @@ export class AppComponent {
   goStop:string;
   filterMe:string = "";
   testState:string = "active";
-
-  thisFly:string = "out";
+  resetCoidList :Array<string> = new Array<string>();
+  thisFly:string = "in";
 
   constructor(private _data : DataService){
   }
@@ -64,9 +66,11 @@ export class AppComponent {
   ngOnInit(){
    this._data.getMarketPrice()
       .subscribe(data => {
-        this.marketData = data;
+        //this.marketData = data;
+        console.log("test check the marketing data");
+        console.log(this._data.marketDataList);
+        this.marketData = this._data.marketDataList;
         this.newCoinList = this._data.newCoinList;
-        console.log(data);
       });
   }
 
@@ -100,6 +104,7 @@ export class AppComponent {
 
   goToHomepage(){
     this.showData = false;
+    this.resetCoinList();
   }
 
   findSingleCoin(coin:string): void{
@@ -109,6 +114,10 @@ export class AppComponent {
     this.filterMe = "";
     
 
+  }
+
+  resetCoinList():void{
+    this.newCoinList = this._data.marketCoinList;
   }
 /*
   flyIn() {
