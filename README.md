@@ -5,10 +5,10 @@ The objective of this web application is to provide its user the information of 
 The following API's are used by this application
 
 1. Binance API
-    - https://www.binance.com/api/v1 
+    - https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md
 
 2. CoinMarketCap API
-    - https://api.coinmarketcap.com/v1/ticker/
+    - https://coinmarketcap.com/api/
 
 
 
