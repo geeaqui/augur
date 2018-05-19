@@ -36,11 +36,13 @@ The following API's are used by this application
 **Prerequisites**:
 
 * node v7.10.0
+
 | Standard
 |:---:
 | <a href="node.js/standard/454x128.png"><img height=48 src="node.js/standard/454x128.png" alt="node.js standard"></a>
 
 * npm
+
 | Square | Standard
 |:---:|:---:
 | <a href="npm/square/128x128.png"><img height=48 src="npm/square/128x128.png" alt="npm square logo"></a> | <a href="npm/original/657x256.png"><img height=48 src="npm/original/657x256.png" alt="npm original logo"></a>
