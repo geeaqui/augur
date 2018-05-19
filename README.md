@@ -1,6 +1,6 @@
 # Augur
 
-The objective of this web application is to provide its user the information of the crypto currency coin traded in https://www.binance.com and get a better view of the maket and predict high and low volatile coin.
+The objective of this web application is to provide its users the information of the crypto currency coin traded in https://www.binance.com and get a better view of the maket to predict high and low volatile coin(s).
 
 The following API's are used by this application
 
